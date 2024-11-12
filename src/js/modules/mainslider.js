@@ -23,7 +23,7 @@ const slider = () => {
                 this.transform();
                 this.dotscounter();
                 addClass(dot, this.dots, "reviews__slider_dots-dot_active");
-                alert("next");
+                //alert("next");
             }
         },
         prev() {
@@ -32,7 +32,7 @@ const slider = () => {
                 this.transform();
                 this.dotscounter();
                 addClass(dot, this.dots, "reviews__slider_dots-dot_active");
-                s.prev();
+                //alert("prev");
             }
         },
         resize() {
@@ -78,20 +78,23 @@ const slider = () => {
     let start = 0;
     let end = 0;
     slider.addEventListener("touchstart", (ev) => {
+        isoWrapper.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+        start = ev.touches[0].clientX;
+
+        //
         slider.addEventListener("touchmove", (e) => {
-            document.body.style.cssText = `overflow: hidden;position: relative;
-    height: 100%;`;
             clearTimeout(set);
             set = setTimeout(() => {
                 end = e.touches[0].clientX;
-                start = ev.touches[0].clientX;
                 if (start - end < 0) {
-                    alert("prev");
+                    s.prev();
                 } else {
                     s.next();
                 }
-                document.body.style.cssText = `overflow: wisible;position: static;
-                height: 100%;`;
+                document.body.style.overflow = "";
+                isoWrapper.style.overflow = "";
+                clearTimeout(set);
             }, 100);
         });
     });
