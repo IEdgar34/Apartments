@@ -81,21 +81,40 @@ const slider = () => {
 
         //
         slider.addEventListener("touchmove", (e) => {
-            clearTimeout(set);
+            c(e);
+            /* clearTimeout(set);
             set = setTimeout(() => {
                 end = e.touches[0].clientX;
                 if (start - end < 0) {
                     s.prev();
-                } else {
-                    s.next();
+                    } else {
+                        s.next();
                 }
-                /*   document.body.style.overflow = ""; */
+                //document.body.style.overflow = "";
                 isoWrapper.style.overflow = "";
-                console.log("s");
                 //clearTimeout(set);
-            }, 100);
+                }, 100); */
         });
     });
+
+    function touch(event) {
+        end = event.touches[0].clientX;
+        if (start - end < 0) {
+            s.prev();
+        } else {
+            s.next();
+        }
+        isoWrapper.style.overflow = "";
+    }
+
+    let c = debounc(touch, 1000);
+    function debounc(fn, delay) {
+        let se;
+        return function () {
+            clearTimeout(se);
+            se = setTimeout(() => fn.apply(this, arguments), delay);
+        };
+    }
     /*  slider.addEventListener("touchend", () => {
         document.body.style.overflow = "";
         isoWrapper.style.overflow = "";

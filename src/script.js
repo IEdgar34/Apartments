@@ -105,26 +105,47 @@ var slider = function slider() {
   var end = 0;
   slider.addEventListener("touchstart", function (ev) {
     isoWrapper.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
+    /* document.body.style.overflow = "hidden"; */
     start = ev.touches[0].clientX;
 
     //
     slider.addEventListener("touchmove", function (e) {
-      clearTimeout(set);
-      set = setTimeout(function () {
-        end = e.touches[0].clientX;
-        if (start - end < 0) {
-          s.prev();
-        } else {
-          s.next();
-        }
-        document.body.style.overflow = "";
-        isoWrapper.style.overflow = "";
-        console.log("s");
-        clearTimeout(set);
-      }, 100);
+      c(e);
+      /* clearTimeout(set);
+      set = setTimeout(() => {
+          end = e.touches[0].clientX;
+          if (start - end < 0) {
+              s.prev();
+              } else {
+                  s.next();
+          }
+          //document.body.style.overflow = "";
+          isoWrapper.style.overflow = "";
+          //clearTimeout(set);
+          }, 100); */
     });
   });
+  function touch(event) {
+    end = event.touches[0].clientX;
+    if (start - end < 0) {
+      s.prev();
+    } else {
+      s.next();
+    }
+    isoWrapper.style.overflow = "";
+  }
+  var c = debounc(touch, 1000);
+  function debounc(fn, delay) {
+    var se;
+    return function () {
+      var _arguments = arguments,
+        _this = this;
+      clearTimeout(se);
+      se = setTimeout(function () {
+        return fn.apply(_this, _arguments);
+      }, delay);
+    };
+  }
   /*  slider.addEventListener("touchend", () => {
       document.body.style.overflow = "";
       isoWrapper.style.overflow = "";
