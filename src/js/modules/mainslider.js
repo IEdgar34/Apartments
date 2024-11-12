@@ -80,7 +80,7 @@ const slider = () => {
                 end = e.touches[0].clientX;
                 start = ev.touches[0].clientX;
                 alert(start, end);
-                alert(start > end);
+                alert(start - end < 0);
                 if (start - end < 0) {
                     s.prev();
                 } else {
