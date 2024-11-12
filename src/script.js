@@ -129,12 +129,14 @@ var slider = function slider() {
     end = event.touches[0].clientX;
     if (start - end < 0) {
       s.prev();
+      console.log("p");
     } else {
       s.next();
+      console.log("n");
     }
     isoWrapper.style.overflow = "";
   }
-  var c = debounc(touch, 1000);
+  var c = debounc(touch, 100);
   function debounc(fn, delay) {
     var se;
     return function () {
