@@ -1,0 +1,92 @@
+@use "mixins/mixins" as w;
+.nav {
+    @include w.width(300, 404);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    &__list {
+        width: 100%;
+        display: flex;
+        flex-shrink: 0;
+        justify-content: space-between;
+
+        &-item_link {
+            position: relative;
+            color: rgb(17, 17, 17);
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: 0%;
+            text-align: left;
+            &:hover {
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: -2px;
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background-color: black;
+                }
+            }
+        }
+    }
+    @media (max-width: 1000px) {
+        display: none;
+    }
+    &_active {
+        display: block;
+        position: fixed;
+        z-index: 10000;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100vh;
+        background-color: var(--blue);
+        z-index: 1000;
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 50vw;
+            width: 100vw;
+            height: 100vh;
+            backdrop-filter: blur(5px);
+            background: rgba(83, 83, 83, 0.48);
+        }
+        .nav__list {
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            margin: auto 0;
+            &-item_link {
+                color: rgb(255, 255, 255);
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 22px;
+            }
+            .nav__item {
+                position: relative;
+                width: 130px;
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    position: absolute;
+                    bottom: -30px;
+                    background: linear-gradient(
+                        45deg,
+                        rgba(255, 255, 255, 0.2) 0%,
+                        rgba(255, 255, 255, 0.76) 50%,
+                        rgba(255, 255, 255, 0.2) 100%
+                    );
+                }
+            }
+        }
+    }
+}

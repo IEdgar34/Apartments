@@ -1,0 +1,109 @@
+@use "mixins/mixins" as w;
+.main__bg {
+    background: linear-gradient(90deg, var(--white) 50%, var(--blue) 50%);
+    @media (min-width: 768px) and (max-width: 1439px) {
+        background: linear-gradient(90deg, var(--white) 30%, var(--blue) 30%);
+    }
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    max-height: 54px;
+    @media (max-width: 1000px) {
+        display: grid;
+        grid-template-columns: [menu-start] 23px [menu-end logo-start] auto [logo-end info-start] 1fr;
+        grid-template-rows: 41px;
+    }
+    &__logo {
+        display: block;
+        img {
+            @include w.width(87, 135);
+        }
+        @media (max-width: 1000px) {
+            margin-left: 38px;
+        }
+        @media (max-width: 350px) {
+            margin-left: 20px;
+        }
+    }
+    &__menu-burger {
+        display: none;
+        cursor: pointer;
+        @media (max-width: 1000px) {
+            display: flex;
+            width: 23px;
+            height: 18px;
+            flex-direction: column;
+            justify-content: space-between;
+            align-self: center;
+            span {
+                width: 100%;
+                height: 2px;
+                background-color: black;
+            }
+        }
+        &_active {
+            position: relative;
+            z-index: 1001;
+            span {
+                display: block;
+                width: 23px;
+                position: absolute;
+                background-color: var(--white);
+                &:nth-child(1) {
+                    top: 0;
+                    animation-name: burgertop;
+                    animation-duration: 0.5s;
+                    animation-delay: 0.8s;
+                    animation-iteration-count: 1;
+                    animation-fill-mode: forwards;
+                }
+                &:nth-child(2) {
+                    top: 50%;
+                    transform: translateY(-50%);
+                    animation-name: burger;
+                    animation-duration: 0.6s;
+                    animation-delay: 0.6s;
+                    animation-iteration-count: 1;
+                    animation-fill-mode: forwards;
+                }
+                &:nth-child(3) {
+                    animation-name: burgerboot;
+                    animation-duration: 0.5s;
+                    animation-delay: 0.8s;
+                    animation-iteration-count: 1;
+                    animation-fill-mode: forwards;
+                    bottom: 0;
+                }
+            }
+        }
+        @keyframes burger {
+            0% {
+                width: 100%;
+            }
+            100% {
+                width: 0;
+            }
+        }
+        @keyframes burgertop {
+            0% {
+                transform: rotate(0);
+                top: 0;
+            }
+            100% {
+                top: 50%;
+                transform: rotate(-45deg);
+            }
+        }
+        @keyframes burgerboot {
+            0% {
+                transform: rotate(0);
+                top: 0;
+            }
+            100% {
+                top: 50%;
+                transform: rotate(45deg);
+            }
+        }
+    }
+}

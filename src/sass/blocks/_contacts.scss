@@ -1,0 +1,124 @@
+@use "mixins/mixins" as w;
+.contacts {
+    width: 100%;
+    min-height: 470px;
+    padding-bottom: 73px;
+    &__title {
+        padding-bottom: 42px;
+    }
+    &__wrapp {
+        width: 100%;
+        display: flex;
+        gap: 40px;
+        @media (max-width: 1000px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    &__links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 92px;
+        @media (max-width: 872px) {
+            margin-bottom: 10px;
+        }
+        &_item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            img {
+                @media (max-width: 425px) {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            &-link {
+                color: rgb(17, 17, 17);
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 22px;
+                @media (max-width: 1030px) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    &__social {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        &__item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            @media (max-width: 1330px) {
+                flex-wrap: wrap;
+            }
+            img {
+                @media (max-width: 425px) {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            span {
+                color: rgb(17, 17, 17);
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 22px;
+                @media (max-width: 1030px) {
+                    font-size: 16px;
+                }
+            }
+            a {
+                display: inline-block;
+                width: 157px;
+                height: 33px;
+                margin-left: 123px;
+                border-radius: 25px;
+                box-shadow: 0px 10px 20px 0px rgba(255, 122, 0, 0.2);
+                background: linear-gradient(87.14deg, rgb(255, 122, 0) 0.11%, rgb(255, 176, 57) 99.901%);
+                padding: 8px 20px 8px 20px;
+                color: rgb(255, 255, 255);
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 17px;
+                text-align: center;
+
+                @include w.hover();
+                @media (max-width: 1330px) {
+                    margin-left: 0;
+                }
+
+                @media (max-width: 920px) {
+                    font-size: 16px;
+                }
+                @media (max-width: 425px) {
+                    width: 127px;
+                    padding: 8px 10px 8px 10px;
+                }
+            }
+        }
+    }
+    &__map {
+        iframe {
+            width: 758px;
+            height: 429px;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0px 10px 20px 0px rgba(17, 17, 17, 0.1);
+            @media (max-width: 1380px) {
+                width: 656px;
+            }
+            @media (max-width: 1221px) {
+                width: 464px;
+            }
+            @media (max-width: 500px) {
+                width: 368px;
+            }
+            @media (max-width: 425px) {
+                width: 300px;
+            }
+        }
+    }
+}

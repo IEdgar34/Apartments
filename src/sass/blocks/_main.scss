@@ -1,0 +1,107 @@
+@use "mixins/mixins" as w;
+.main {
+    width: 100%;
+    min-height: 540px;
+    padding-top: 140px;
+    padding-left: 10px;
+    padding-bottom: 197px;
+    &__btn {
+        display: block;
+        padding: 15px 30px;
+        @include w.width(211, 251);
+    }
+    &__content {
+        display: flex;
+        justify-content: end;
+        gap: 52px;
+        position: relative;
+        @media (max-width: 1000px) {
+            height: 257px;
+            align-items: center;
+        }
+
+        &_title-wrap {
+            margin-top: 80px;
+            max-width: 413px;
+            max-height: 296px;
+            @media (max-width: 1200px) {
+                max-width: 182px;
+                margin-top: 0;
+            }
+            @media (max-width: 768px) {
+                /* max-width: 268px; */
+                text-align: center;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 100;
+            }
+            &-title {
+                padding-bottom: 20px;
+                color: rgb(17, 17, 17);
+                font-size: 40px;
+                font-weight: 800;
+                text-align: left;
+                line-height: 44px;
+                @media (max-width: 1200px) {
+                    font-size: 20px;
+                    line-height: 1;
+                }
+                @media (max-width: 768px) {
+                    text-align: center;
+                    color: var(--white);
+                }
+            }
+            .subtitle {
+                padding-bottom: 60px;
+                color: rgb(17, 17, 17);
+                font-size: 24px;
+                font-weight: 400;
+                text-align: left;
+                @media (max-width: 1200px) {
+                    font-size: 18px;
+                }
+                @media (max-width: 768px) {
+                    text-align: center;
+                    color: var(--white);
+                    font-size: 14px;
+                }
+            }
+            /* button {
+                @include w.width(211, 251);
+
+            } */
+        }
+       
+        &_image-wrap {
+            width: 895px;
+            height: 473px;
+            position: relative;
+            border-radius: 10px 0 0 10px;
+            overflow: hidden;
+            @media (max-width: 1200px) {
+                width: 745px;
+            }
+            @media (max-width: 1000px) {
+                height: 364px;
+            }
+            @media (max-width: 768px) {
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(17, 17, 17, 0.5);
+                }
+            }
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

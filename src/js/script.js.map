@@ -1,0 +1,1 @@
+{"version":3,"file":"script.js","mappings":";;;;AAAA,SAASA,CAACA,CAAA,EAAG;EACZC,OAAO,CAACC,GAAG,CAAC,CAAC;AACd,C","sources":["webpack://lesson/./src/js/main.js"],"sourcesContent":["function c() {\r\n\tconsole.log();\r\n}\r\n"],"names":["c","console","log"],"sourceRoot":""}

@@ -1,0 +1,15 @@
+@use "mixins/mixins" as w;
+.button {
+    flex-shrink: 0;
+    @include w.width(124, 218);
+    height: 52px;
+    @include w.btn-normal();
+    color: rgb(255, 255, 255);
+    font-family: "Montserrat" sans-serif;
+    @include w.titleFz(16, 12);
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    @include w.hover();
+}

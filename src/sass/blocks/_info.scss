@@ -1,0 +1,49 @@
+@use "mixins/mixins" as w;
+
+.info {
+    @include w.width(75, 634);
+    display: flex;
+    justify-content: end;
+    gap: 25px;
+    @media (max-width: 1000px) {
+        justify-self: end;
+    }
+    div {
+        max-width: 191px;
+        max-height: 40px;
+        display: flex;
+        gap: 10px;
+        
+
+        a {
+            color: var(--white);
+            flex-shrink: 0;
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20px;
+            &:nth-child(2) {
+                margin-top: 8px;
+                flex-grow: 1;
+                @media (max-width: 1439px) {
+                    display: none;
+                }
+            }
+        }
+        img {
+            display: block;
+            width: 40px;
+            height: 40px;
+            @media (max-width: 1439px) {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+    button {
+        flex-grow: 0;
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+}

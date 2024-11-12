@@ -1,0 +1,7 @@
+@use "mixins/mixins" as w;
+.title {
+    @include w.titleFz(24, 36);
+    color: rgb(43, 122, 241);
+    font-weight: 800;
+    line-height: 44px;
+}

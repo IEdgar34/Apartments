@@ -1,0 +1,37 @@
+@use "mixins/mixins";
+@use "variables/variables";
+@use "base/base";
+@use "blocks/title";
+@use "blocks/header";
+@use "blocks/nav";
+@use "blocks/info";
+@use "blocks/btn";
+@use "blocks/main";
+@use "blocks/card";
+@use "blocks/apartments";
+@use "blocks/aboutus";
+@use "blocks/contacts";
+@use "blocks/reviews";
+@use "blocks/message";
+@use "blocks/footer";
+@use "blocks/apartmentsall";
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    .section__header {
+        flex-shrink: 0;
+        width: 100%;
+        position: absolute;
+        top: 25px;
+    }
+    .section__main {
+        flex-grow: 1;
+        width: 100%;
+    }
+    .section__footer {
+        flex-shrink: 0;
+        width: 100%;
+    }
+    
+}
