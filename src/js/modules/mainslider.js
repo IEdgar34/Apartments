@@ -78,8 +78,8 @@ const slider = () => {
     let start = 0;
     let end = 0;
     slider.addEventListener("touchstart", (ev) => {
-        isoWrapper.style.overflow = "hidden";
-        document.body.style.overflow = "hidden";
+        /* isoWrapper.style.overflow = "hidden";
+        document.body.style.overflow = "hidden"; */
         start = ev.touches[0].clientX;
 
         //
@@ -92,8 +92,8 @@ const slider = () => {
                 } else {
                     s.next();
                 }
-                document.body.style.overflow = "";
-                isoWrapper.style.overflow = "";
+                /* document.body.style.overflow = "";
+                isoWrapper.style.overflow = ""; */
                 clearTimeout(set);
             }, 100);
         });
