@@ -92,7 +92,7 @@ const slider = () => {
                 /*   document.body.style.overflow = ""; */
                 isoWrapper.style.overflow = "";
                 console.log("s");
-                clearTimeout(set);
+                //clearTimeout(set);
             }, 100);
         });
     });
