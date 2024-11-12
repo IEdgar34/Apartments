@@ -121,15 +121,18 @@ var slider = function slider() {
         } else {
           s.next();
         }
+        document.body.style.overflow = "";
+        isoWrapper.style.overflow = "";
+        console.log("s");
         clearTimeout(set);
       }, 100);
     });
   });
-  slider.addEventListener("touchend", function () {
-    document.body.style.overflow = "";
-    isoWrapper.style.overflow = "";
-    console.log('s');
-  });
+  /*  slider.addEventListener("touchend", () => {
+      document.body.style.overflow = "";
+      isoWrapper.style.overflow = "";
+      console.log('s')
+  }); */
 };
 
 

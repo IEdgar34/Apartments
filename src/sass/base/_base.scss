@@ -15,9 +15,10 @@ html,
 body {
     /* min-height: 100%; */
     background-color: var(--white);
-}
-body::-webkit-scrollbar {
-    position: absolute;
+    &::-webkit-scrollbar {
+        position: absolute;
+        right: 10px;
+    }
 }
 
 .container {
