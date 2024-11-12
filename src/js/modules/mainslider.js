@@ -4,6 +4,7 @@ const slider = () => {
     const next = document.querySelector(".reviews__slider_next");
     const prev = document.querySelector(".reviews__slider_prev");
     const dot = document.querySelectorAll(".reviews__slider_dots-dot");
+    const isoWrapper = document.querySelector(".ioswrapper");
 
     const s = {
         width: sliderItem[0].offsetWidth + +parseInt(window.getComputedStyle(slider).columnGap),
@@ -75,6 +76,7 @@ const slider = () => {
     let end = 0;
     slider.addEventListener("touchstart", (ev) => {
         slider.addEventListener("touchmove", (e) => {
+            isoWrapper.style.overflow = "hidden";
             clearTimeout(set);
             set = setTimeout(() => {
                 end = e.touches[0].clientX;
@@ -86,6 +88,7 @@ const slider = () => {
                 } else {
                     s.next();
                 }
+                isoWrapper.style.overflow = "";
             }, 100);
         });
     });

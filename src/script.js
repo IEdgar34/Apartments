@@ -36,6 +36,7 @@ var slider = function slider() {
   var next = document.querySelector(".reviews__slider_next");
   var prev = document.querySelector(".reviews__slider_prev");
   var dot = document.querySelectorAll(".reviews__slider_dots-dot");
+  var isoWrapper = document.querySelector(".ioswrapper");
   var s = {
     width: sliderItem[0].offsetWidth + +parseInt(window.getComputedStyle(slider).columnGap),
     maxW: sliderItem[0].offsetWidth * (sliderItem.length - 1),
@@ -104,6 +105,7 @@ var slider = function slider() {
   var end = 0;
   slider.addEventListener("touchstart", function (ev) {
     slider.addEventListener("touchmove", function (e) {
+      isoWrapper.style.overflow = "hidden";
       clearTimeout(set);
       set = setTimeout(function () {
         end = e.touches[0].clientX;
@@ -115,6 +117,7 @@ var slider = function slider() {
         } else {
           s.next();
         }
+        isoWrapper.style.overflow = "";
       }, 100);
     });
   });
