@@ -105,7 +105,7 @@ var slider = function slider() {
   var end = 0;
   slider.addEventListener("touchstart", function (ev) {
     slider.addEventListener("touchmove", function (e) {
-      isoWrapper.style.overflow = "hidden";
+      document.body.style.cssText = "overflow: hidden;position: relative;\n    height: 100%;";
       clearTimeout(set);
       set = setTimeout(function () {
         end = e.touches[0].clientX;
@@ -117,7 +117,7 @@ var slider = function slider() {
         } else {
           s.next();
         }
-        isoWrapper.style.overflow = "";
+        document.body.style.cssText = "overflow: wisible;position: static;\n                height: 100%;";
       }, 100);
     });
   });

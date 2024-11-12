@@ -76,7 +76,8 @@ const slider = () => {
     let end = 0;
     slider.addEventListener("touchstart", (ev) => {
         slider.addEventListener("touchmove", (e) => {
-            isoWrapper.style.overflow = "hidden";
+            document.body.style.cssText = `overflow: hidden;position: relative;
+    height: 100%;`;
             clearTimeout(set);
             set = setTimeout(() => {
                 end = e.touches[0].clientX;
@@ -88,7 +89,8 @@ const slider = () => {
                 } else {
                     s.next();
                 }
-                isoWrapper.style.overflow = "";
+                document.body.style.cssText = `overflow: wisible;position: static;
+                height: 100%;`;
             }, 100);
         });
     });
