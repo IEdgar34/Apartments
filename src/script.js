@@ -108,6 +108,8 @@ var slider = function slider() {
       set = setTimeout(function () {
         end = e.touches[0].clientX;
         start = ev.touches[0].clientX;
+        alert(start, end);
+        alert(start > end);
         if (start - end < 0) {
           s.prev();
         } else {
