@@ -54,6 +54,7 @@ var slider = function slider() {
         this.transform();
         this.dotscounter();
         addClass(dot, this.dots, "reviews__slider_dots-dot_active");
+        alert("next");
       }
     },
     prev: function prev() {
@@ -62,9 +63,11 @@ var slider = function slider() {
         this.transform();
         this.dotscounter();
         addClass(dot, this.dots, "reviews__slider_dots-dot_active");
+        s.prev();
       }
     },
     resize: function resize() {
+      alert("resize");
       slider.style.transform = "translateX(-".concat(0, "px)");
       this.dots = 0;
       this.size = 0;
@@ -111,11 +114,9 @@ var slider = function slider() {
         end = e.touches[0].clientX;
         start = ev.touches[0].clientX;
         if (start - end < 0) {
-          s.prev();
           alert("prev");
         } else {
           s.next();
-          alert("next");
         }
         document.body.style.cssText = "overflow: wisible;position: static;\n                height: 100%;";
       }, 100);
