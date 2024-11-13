@@ -25,8 +25,8 @@ const slider = () => {
                 //alert("функция запускатся,условие прошло");
                 this.size += this.width;
                 this.transform();
-                this.dotscounter();
-                addClass(dot, this.dots, "reviews__slider_dots-dot_active");
+                /* this.dotscounter();
+                addClass(dot, this.dots, "reviews__slider_dots-dot_active"); */
             }
         },
         prev() {
@@ -35,8 +35,8 @@ const slider = () => {
               //  alert("функция запускатся,условие прошло");
                 this.size -= this.width;
                 this.transform();
-                this.dotscounter();
-                addClass(dot, this.dots, "reviews__slider_dots-dot_active");
+                /* this.dotscounter();
+                addClass(dot, this.dots, "reviews__slider_dots-dot_active"); */
             }
         },
         resize() {
