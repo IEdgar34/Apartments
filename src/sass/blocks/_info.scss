@@ -13,7 +13,6 @@
         max-height: 40px;
         display: flex;
         gap: 10px;
-        
 
         a {
             color: var(--white);
@@ -40,8 +39,19 @@
             }
         }
     }
-    button {
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         flex-grow: 0;
+        width: 214px;
+        height: 52px;
+        font-size: 18px;
+        @media (max-width: 1000px) {
+            width: 114px;
+            height: 30px;
+            font-size: 12px;
+        }
         @media (max-width: 768px) {
             display: none;
         }

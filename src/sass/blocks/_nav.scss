@@ -40,7 +40,7 @@
         z-index: 10000;
         top: 0;
         left: 0;
-        width: 50%;
+        width: 50vw;
         height: 100vh;
         background-color: var(--blue);
         z-index: 1000;
@@ -54,6 +54,7 @@
             height: 100vh;
             backdrop-filter: blur(5px);
             background: rgba(83, 83, 83, 0.48);
+            z-index: -1000;
         }
         .nav__list {
             width: 100%;
@@ -68,6 +69,10 @@
                 font-size: 18px;
                 font-weight: 600;
                 line-height: 22px;
+                &::after{
+                    display: none;
+                }
+                
             }
             .nav__item {
                 position: relative;

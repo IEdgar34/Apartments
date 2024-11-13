@@ -1,3 +1,4 @@
+@use "mixins/mixins" as w;
 .reviews {
     width: 100%;
     min-height: 324px;
@@ -35,6 +36,16 @@
         &_btn {
             position: absolute;
             cursor: pointer;
+            border-radius: 50%;
+            @include w.hoverBtn {
+                &:hover {
+                    box-shadow: 0px 0px 17px 7px #ff7a00;
+                }
+                &:active {
+                    box-shadow: 0px 0px 17px 7px #ff7a00;
+                }
+            }
+            
         }
         &_prev {
             left: -2vw;

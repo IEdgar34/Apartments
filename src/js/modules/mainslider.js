@@ -5,7 +5,9 @@ const slider = () => {
     const prev = document.querySelector(".reviews__slider_prev");
     const dot = document.querySelectorAll(".reviews__slider_dots-dot");
     const isoWrapper = document.querySelector(".ioswrapper");
-
+    let t = true;
+    let resizeStart = 0;
+    let resizeEnd = 0;
     const s = {
         width: sliderItem[0].offsetWidth + +parseInt(window.getComputedStyle(slider).columnGap),
         maxW: sliderItem[0].offsetWidth * (sliderItem.length - 1),
@@ -34,12 +36,27 @@ const slider = () => {
             }
         },
         resize() {
-            this.width = sliderItem[0].offsetWidth + +parseInt(window.getComputedStyle(slider).columnGap);
-            this.maxW = sliderItem[0].offsetWidth * (sliderItem.length - 1);
-            this.size = this.width * this.dots;
-            this.transform();
-            this.dotscounter();
-            addClass(dot, this.dots, "reviews__slider_dots-dot_active");
+            alert(window.innerWidth);
+            alert(isoWrapper.clientWidth);
+            clearTimeout(this.set);
+            if (t) {
+                resizeStart = window.innerWidth;
+                t = false;
+            }
+            this.set = setTimeout(() => {
+                resizeEnd = window.innerWidth;
+                if (resizeEnd - resizeStart > 18 || resizeEnd - resizeStart < -18) {
+                    this.width = sliderItem[0].offsetWidth + +parseInt(window.getComputedStyle(slider).columnGap);
+                    this.maxW = sliderItem[0].offsetWidth * (sliderItem.length - 1);
+                    this.size = this.width * this.dots;
+                    this.transform();
+                    this.dotscounter();
+                    addClass(dot, this.dots, "reviews__slider_dots-dot_active");
+                    t = true;
+                    resizeEnd = 0;
+                    resizeStart = 0;
+                }
+            }, 100);
         },
         dotscounter() {
             this.dots = 0;
@@ -51,7 +68,6 @@ const slider = () => {
     next.addEventListener("click", s.next.bind(s));
     prev.addEventListener("click", s.prev.bind(s));
     window.addEventListener("resize", s.resize.bind(s));
-
     function addClass(arrElemets, counter, classSelector) {
         arrElemets.forEach((item) => {
             item.classList.remove(classSelector);
@@ -70,30 +86,16 @@ const slider = () => {
         });
     }
     dotsMove();
-    let set;
-    let x = 0;
     let start = 0;
     let end = 0;
     slider.addEventListener("touchstart", (ev) => {
         isoWrapper.style.overflow = "hidden";
-        /* document.body.style.overflow = "hidden"; */
+        document.body.style.overflow = "hidden";
         start = ev.touches[0].clientX;
 
         //
         slider.addEventListener("touchmove", (e) => {
             c(e);
-            /* clearTimeout(set);
-            set = setTimeout(() => {
-                end = e.touches[0].clientX;
-                if (start - end < 0) {
-                    s.prev();
-                    } else {
-                        s.next();
-                }
-                //document.body.style.overflow = "";
-                isoWrapper.style.overflow = "";
-                //clearTimeout(set);
-                }, 100); */
         });
     });
 
@@ -101,12 +103,11 @@ const slider = () => {
         end = event.touches[0].clientX;
         if (start - end < 0) {
             s.prev();
-            console.log("p")
         } else {
             s.next();
-            console.log("n")
         }
         isoWrapper.style.overflow = "";
+        document.body.style.overflow = "";
     }
 
     let c = debounc(touch, 100);
@@ -117,10 +118,5 @@ const slider = () => {
             se = setTimeout(() => fn.apply(this, arguments), delay);
         };
     }
-    /*  slider.addEventListener("touchend", () => {
-        document.body.style.overflow = "";
-        isoWrapper.style.overflow = "";
-        console.log('s')
-    }); */
 };
 export { slider };

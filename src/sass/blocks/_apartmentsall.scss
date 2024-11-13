@@ -3,6 +3,9 @@
     //max-height: 1880px;
     padding-top: 68px;
     padding-bottom: 120px;
+    @media (max-width: 850px) {
+       padding-bottom: 60px;
+    }
     &__title {
         padding-bottom: 40px;
     }
@@ -22,12 +25,23 @@
         grid-auto-rows: minmax(317px, 548px);
         column-gap: 30px;
         row-gap: 80px;
-        @media(max-width: 850px){
+        @media (max-width: 1290px) {
+            row-gap: 25px;
+        }
+        @media (max-width: 850px) {
             grid-template-columns: repeat(2, minmax(227px, 249px));
+            grid-template-rows: repeat(2, minmax(317px, 490px));
+            grid-auto-rows: minmax(317px, 490px);
             justify-content: center;
         }
-        @media(max-width: 580px){
+        @media (max-width: 580px) {
             grid-template-columns: repeat(1, minmax(227px, 249px));
+            grid-template-rows: repeat(1, minmax(317px, 490px));
+            row-gap: 40px;
+        }
+        @media (max-width: 450px) {
+            grid-template-columns: repeat(1, minmax(227px, 249px));
+            grid-template-rows: repeat(1, minmax(317px, 440px));
             row-gap: 40px;
         }
 
@@ -39,6 +53,9 @@
                 min-height: 140px;
                 border-radius: 10px;
                 margin-bottom: 20px;
+                @media (max-width: 850px) {
+                    margin-bottom: 10px;
+                }
             }
             &-title {
                 color: rgb(51, 51, 51);
@@ -46,7 +63,10 @@
                 font-weight: 700;
                 line-height: 29px;
                 margin-bottom: 20px;
-                @media(max-width:425px){
+                @media (max-width: 850px) {
+                    margin-bottom: 10px;
+                }
+                @media (max-width: 425px) {
                     font-size: 20px;
                     line-height: 20px;
                 }
@@ -57,7 +77,10 @@
                 font-weight: 400;
                 line-height: 22px;
                 margin-bottom: 20px;
-                @media(max-width:425px){
+                @media (max-width: 850px) {
+                    margin-bottom: 10px;
+                }
+                @media (max-width: 425px) {
                     font-size: 16px;
                     line-height: 20px;
                 }
@@ -74,7 +97,10 @@
                 font-weight: 400;
                 line-height: 22px;
                 margin-bottom: 20px;
-                @media(max-width: 1066px){
+                @media (max-width: 850px) {
+                    margin-bottom: 10px;
+                }
+                @media (max-width: 1066px) {
                     font-size: 16px;
                 }
                 img {

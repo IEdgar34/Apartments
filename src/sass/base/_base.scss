@@ -15,12 +15,11 @@ html,
 body {
     /* min-height: 100%; */
     background-color: var(--white);
-    &::-webkit-scrollbar {
-        position: absolute;
-        right: 10px;
-    }
+    
 }
-
+.body__overflow{
+    overflow: hidden;
+}
 .container {
     max-width: 1440px;
     min-height: auto;

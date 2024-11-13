@@ -9,6 +9,12 @@
         display: block;
         padding: 15px 30px;
         @include w.width(211, 251);
+        @media (max-width: 1244px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 25px;
+        }
     }
     &__content {
         display: flex;
@@ -73,7 +79,7 @@
 
             } */
         }
-       
+
         &_image-wrap {
             width: 895px;
             height: 473px;
