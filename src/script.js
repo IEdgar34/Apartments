@@ -124,8 +124,8 @@ var slider = function slider() {
   var end = 0;
   slider.addEventListener("touchstart", touchS, event);
   function touchS(event) {
-    isoWrapper.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
+    /* isoWrapper.style.overflow = "hidden";
+    document.body.style.overflow = "hidden"; */
     start = event.touches[0].clientX;
     // alert("touch start сработал")
     //
@@ -139,8 +139,8 @@ var slider = function slider() {
     } else {
       s.next();
     }
-    isoWrapper.style.overflow = "";
-    document.body.style.overflow = "";
+    /*  isoWrapper.style.overflow = "";
+     document.body.style.overflow = ""; */
     slider.removeEventListener("touchmove", touchmove, event);
   }
   var c = debounc(touchmove, 100);
