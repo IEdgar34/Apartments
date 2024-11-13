@@ -20,7 +20,7 @@ const slider = () => {
             slider.style.transform = `translateX(-${this.size}px)`;
         },
         next() {
-            alert("функция запускатся,условие не проходит");
+             alert("функция запускатся,условие не проходит");
             if (this.size < this.maxW) {
                 alert("функция запускатся,условие прошло");
                 this.size += this.width;
@@ -30,9 +30,9 @@ const slider = () => {
             }
         },
         prev() {
-            alert("функция запускатся,условие не проходит");
+             alert("функция запускатся,условие не проходит");
             if (this.size > 0) {
-                alert("функция запускатся,условие прошло");
+                 alert("функция запускатся,условие прошло");
                 this.size -= this.width;
                 this.transform();
                 this.dotscounter();
@@ -99,9 +99,12 @@ const slider = () => {
         // alert("touch start сработал")
         //
     }
-    slider.addEventListener("touchend", (ev) => c(ev));
+    slider.addEventListener("touchend", (ev) => touchmove(ev));
     function touchmove(ev) {
-        end = ev[0].changedTouches[0].clientX;
+        end = 0;
+        console.log()
+       // end = ev[0].changedTouches[0].clientX;
+        end = ev.changedTouches[0].clientX;
         alert("touch move сработал");
         if (start - end < 0) {
             s.prev();
