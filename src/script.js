@@ -52,9 +52,9 @@ var slider = function slider() {
       slider.style.transform = "translateX(-".concat(this.size, "px)");
     },
     next: function next() {
-      alert("функция запускатся,условие не проходит");
+      // alert("функция запускатся,условие не проходит");
       if (this.size < this.maxW) {
-        alert("функция запускатся,условие прошло");
+        //alert("функция запускатся,условие прошло");
         this.size += this.width;
         this.transform();
         this.dotscounter();
@@ -62,9 +62,9 @@ var slider = function slider() {
       }
     },
     prev: function prev() {
-      alert("функция запускатся,условие не проходит");
+      //  alert("функция запускатся,условие не проходит");
       if (this.size > 0) {
-        alert("функция запускатся,условие прошло");
+        //  alert("функция запускатся,условие прошло");
         this.size -= this.width;
         this.transform();
         this.dotscounter();
@@ -122,31 +122,29 @@ var slider = function slider() {
   dotsMove();
   var start = 0;
   var end = 0;
-  slider.addEventListener("touchstart", function (e) {
-    return touchS(e);
-  });
+  slider.addEventListener("touchstart", touchS, event);
   function touchS(event) {
     /* isoWrapper.style.overflow = "hidden";
     document.body.style.overflow = "hidden"; */
     start = event.touches[0].clientX;
+    slider.addEventListener("touchstart", touchS, event);
     console.log("s");
     // alert("touch start сработал")
     //
   }
-  slider.addEventListener("touchend", function (ev) {
-    return touchmove(ev);
-  });
+  slider.addEventListener("touchend", touchmove, event);
   function touchmove(ev) {
     end = 0;
     console.log();
     // end = ev[0].changedTouches[0].clientX;
     end = ev.changedTouches[0].clientX;
-    alert("touch move сработал");
+    // alert("touch move сработал");
     if (start - end < 0) {
       s.prev();
     } else {
       s.next();
     }
+    slider.addEventListener("touchend", touchmove, event);
     /*  isoWrapper.style.overflow = "";
     document.body.style.overflow = ""; */
     /*  slider.removeEventListener("touchmove", touchmove, event); */
