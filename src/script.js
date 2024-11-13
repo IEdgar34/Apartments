@@ -122,17 +122,22 @@ var slider = function slider() {
   dotsMove();
   var start = 0;
   var end = 0;
-  slider.addEventListener("touchstart", touchS, event);
+  slider.addEventListener("touchstart", function (e) {
+    return touchS(e);
+  });
   function touchS(event) {
     /* isoWrapper.style.overflow = "hidden";
     document.body.style.overflow = "hidden"; */
     start = event.touches[0].clientX;
+    console.log("s");
     // alert("touch start сработал")
     //
   }
-  slider.addEventListener("touchmove", touchmove, event);
-  function touchmove(event) {
-    end = event.touches[0].clientX;
+  slider.addEventListener("touchend", function (ev) {
+    return c(ev);
+  });
+  function touchmove(ev) {
+    end = ev[0].changedTouches[0].clientX;
     alert("touch move сработал");
     if (start - end < 0) {
       s.prev();
@@ -140,18 +145,20 @@ var slider = function slider() {
       s.next();
     }
     /*  isoWrapper.style.overflow = "";
-     document.body.style.overflow = ""; */
+    document.body.style.overflow = ""; */
     /*  slider.removeEventListener("touchmove", touchmove, event); */
   }
   var c = debounc(touchmove, 100);
   function debounc(fn, delay) {
     var se;
     return function () {
-      var _arguments = arguments,
-        _this2 = this;
+      var _this2 = this;
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
       clearTimeout(se);
       se = setTimeout(function () {
-        return fn.apply(_this2, _arguments);
+        return fn.call(_this2, args);
       }, delay);
     };
   }
