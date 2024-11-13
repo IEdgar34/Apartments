@@ -119,7 +119,7 @@ var slider = function slider() {
       });
     });
   }
-  dotsMove();
+  /* dotsMove(); */
   var start = 0;
   var end = 0;
   slider.addEventListener("touchstart", touchS, event);

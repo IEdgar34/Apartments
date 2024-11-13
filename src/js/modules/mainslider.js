@@ -87,7 +87,7 @@ const slider = () => {
             });
         });
     }
-    dotsMove();
+    /* dotsMove(); */
     let start = 0;
     let end = 0;
     slider.addEventListener("touchstart",  touchS,event);
