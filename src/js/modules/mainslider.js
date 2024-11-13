@@ -36,8 +36,6 @@ const slider = () => {
             }
         },
         resize() {
-            alert(window.innerWidth);
-            alert(isoWrapper.clientWidth);
             clearTimeout(this.set);
             if (t) {
                 resizeStart = window.innerWidth;
@@ -46,6 +44,8 @@ const slider = () => {
             this.set = setTimeout(() => {
                 resizeEnd = window.innerWidth;
                 if (resizeEnd - resizeStart > 18 || resizeEnd - resizeStart < -18) {
+                    alert(window.innerWidth);
+                    alert(isoWrapper.clientWidth);
                     this.width = sliderItem[0].offsetWidth + +parseInt(window.getComputedStyle(slider).columnGap);
                     this.maxW = sliderItem[0].offsetWidth * (sliderItem.length - 1);
                     this.size = this.width * this.dots;
