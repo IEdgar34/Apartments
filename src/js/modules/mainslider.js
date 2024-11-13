@@ -5,6 +5,7 @@ const slider = () => {
     const prev = document.querySelector(".reviews__slider_prev");
     const dot = document.querySelectorAll(".reviews__slider_dots-dot");
     const isoWrapper = document.querySelector(".ioswrapper");
+    const f = document.querySelector(".reviews__slider")
     let t = true;
     let resizeStart = 0;
     let resizeEnd = 0;
@@ -25,8 +26,8 @@ const slider = () => {
                 //alert("функция запускатся,условие прошло");
                 this.size += this.width;
                 this.transform();
-                /* this.dotscounter();
-                addClass(dot, this.dots, "reviews__slider_dots-dot_active"); */
+                this.dotscounter();
+                addClass(dot, this.dots, "reviews__slider_dots-dot_active");
             }
         },
         prev() {
@@ -35,8 +36,8 @@ const slider = () => {
               //  alert("функция запускатся,условие прошло");
                 this.size -= this.width;
                 this.transform();
-                /* this.dotscounter();
-                addClass(dot, this.dots, "reviews__slider_dots-dot_active"); */
+                this.dotscounter();
+                addClass(dot, this.dots, "reviews__slider_dots-dot_active");
             }
         },
         resize() {
@@ -87,7 +88,7 @@ const slider = () => {
             });
         });
     }
-    /* dotsMove(); */
+    dotsMove();
     let start = 0;
     let end = 0;
     slider.addEventListener("touchstart",  touchS,event);
@@ -95,12 +96,12 @@ const slider = () => {
         /* isoWrapper.style.overflow = "hidden";
         document.body.style.overflow = "hidden"; */
         start = event.touches[0].clientX;
-        slider.addEventListener("touchstart",  touchS,event);
+        /* slider.addEventListener("touchstart",  touchS,event); */
         console.log("s");
         // alert("touch start сработал")
         //
     }
-    slider.addEventListener("touchend",  touchmove,event);
+    f.addEventListener("touchend",  touchmove,event);
     function touchmove(ev) {
         alert("touch move сработал");
         end = 0;
@@ -112,7 +113,7 @@ const slider = () => {
         } else {
             s.next();
         }
-        slider.addEventListener("touchend",  touchmove, event);
+       /*  slider.addEventListener("touchend",  touchmove, event); */
         /*  isoWrapper.style.overflow = "";
         document.body.style.overflow = ""; */
         /*  slider.removeEventListener("touchmove", touchmove, event); */

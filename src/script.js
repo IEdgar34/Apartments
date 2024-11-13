@@ -37,6 +37,7 @@ var slider = function slider() {
   var prev = document.querySelector(".reviews__slider_prev");
   var dot = document.querySelectorAll(".reviews__slider_dots-dot");
   var isoWrapper = document.querySelector(".ioswrapper");
+  var f = document.querySelector(".reviews__slider");
   var t = true;
   var resizeStart = 0;
   var resizeEnd = 0;
@@ -57,8 +58,8 @@ var slider = function slider() {
         //alert("функция запускатся,условие прошло");
         this.size += this.width;
         this.transform();
-        /* this.dotscounter();
-        addClass(dot, this.dots, "reviews__slider_dots-dot_active"); */
+        this.dotscounter();
+        addClass(dot, this.dots, "reviews__slider_dots-dot_active");
       }
     },
     prev: function prev() {
@@ -67,8 +68,8 @@ var slider = function slider() {
         //  alert("функция запускатся,условие прошло");
         this.size -= this.width;
         this.transform();
-        /* this.dotscounter();
-        addClass(dot, this.dots, "reviews__slider_dots-dot_active"); */
+        this.dotscounter();
+        addClass(dot, this.dots, "reviews__slider_dots-dot_active");
       }
     },
     resize: function resize() {
@@ -119,7 +120,7 @@ var slider = function slider() {
       });
     });
   }
-  /* dotsMove(); */
+  dotsMove();
   var start = 0;
   var end = 0;
   slider.addEventListener("touchstart", touchS, event);
@@ -127,12 +128,12 @@ var slider = function slider() {
     /* isoWrapper.style.overflow = "hidden";
     document.body.style.overflow = "hidden"; */
     start = event.touches[0].clientX;
-    slider.addEventListener("touchstart", touchS, event);
+    /* slider.addEventListener("touchstart",  touchS,event); */
     console.log("s");
     // alert("touch start сработал")
     //
   }
-  slider.addEventListener("touchend", touchmove, event);
+  f.addEventListener("touchend", touchmove, event);
   function touchmove(ev) {
     alert("touch move сработал");
     end = 0;
@@ -144,7 +145,7 @@ var slider = function slider() {
     } else {
       s.next();
     }
-    slider.addEventListener("touchend", touchmove, event);
+    /*  slider.addEventListener("touchend",  touchmove, event); */
     /*  isoWrapper.style.overflow = "";
     document.body.style.overflow = ""; */
     /*  slider.removeEventListener("touchmove", touchmove, event); */
