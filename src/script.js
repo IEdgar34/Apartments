@@ -129,8 +129,8 @@ var slider = function slider() {
     start = event.touches[0].clientX;
     // alert("touch start сработал")
     //
-    slider.addEventListener("touchmove", touchmove, event);
   }
+  slider.addEventListener("touchmove", touchmove, event);
   function touchmove(event) {
     end = event.touches[0].clientX;
     alert("touch move сработал");
@@ -141,7 +141,7 @@ var slider = function slider() {
     }
     /*  isoWrapper.style.overflow = "";
      document.body.style.overflow = ""; */
-    slider.removeEventListener("touchmove", touchmove, event);
+    /*  slider.removeEventListener("touchmove", touchmove, event); */
   }
   var c = debounc(touchmove, 100);
   function debounc(fn, delay) {

@@ -97,8 +97,8 @@ const slider = () => {
         start = event.touches[0].clientX;
         // alert("touch start сработал")
         //
-        slider.addEventListener("touchmove", touchmove, event);
     }
+    slider.addEventListener("touchmove", touchmove, event);
     function touchmove(event) {
         end = event.touches[0].clientX;
         alert("touch move сработал");
@@ -109,7 +109,7 @@ const slider = () => {
         }
        /*  isoWrapper.style.overflow = "";
         document.body.style.overflow = ""; */
-        slider.removeEventListener("touchmove", touchmove, event);
+       /*  slider.removeEventListener("touchmove", touchmove, event); */
     }
 
     let c = debounc(touchmove, 100);
