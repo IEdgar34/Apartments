@@ -90,19 +90,18 @@ const slider = () => {
     dotsMove();
     let start = 0;
     let end = 0;
-    slider.addEventListener("touchstart", (ev) => {
+    slider.addEventListener("touchstart", touchS, event);
+    function touchS(event) {
         isoWrapper.style.overflow = "hidden";
         document.body.style.overflow = "hidden";
-        start = ev.touches[0].clientX;
-
+        start = event.touches[0].clientX;
+        // alert("touch start сработал")
         //
-        slider.addEventListener("touchmove", (e) => {
-            c(e);
-        });
-    });
-
-    function touch(event) {
+        slider.addEventListener("touchmove", touchmove, event);
+    }
+    function touchmove(event) {
         end = event.touches[0].clientX;
+        alert("touch move сработал");
         if (start - end < 0) {
             s.prev();
         } else {
@@ -110,9 +109,10 @@ const slider = () => {
         }
         isoWrapper.style.overflow = "";
         document.body.style.overflow = "";
+        slider.removeEventListener("touchmove", touchmove, event);
     }
 
-    let c = debounc(touch, 100);
+    let c = debounc(touchmove, 100);
     function debounc(fn, delay) {
         let se;
         return function () {

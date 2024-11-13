@@ -122,18 +122,18 @@ var slider = function slider() {
   dotsMove();
   var start = 0;
   var end = 0;
-  slider.addEventListener("touchstart", function (ev) {
+  slider.addEventListener("touchstart", touchS, event);
+  function touchS(event) {
     isoWrapper.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
-    start = ev.touches[0].clientX;
-
+    start = event.touches[0].clientX;
+    // alert("touch start сработал")
     //
-    slider.addEventListener("touchmove", function (e) {
-      c(e);
-    });
-  });
-  function touch(event) {
+    slider.addEventListener("touchmove", touchmove, event);
+  }
+  function touchmove(event) {
     end = event.touches[0].clientX;
+    alert("touch move сработал");
     if (start - end < 0) {
       s.prev();
     } else {
@@ -141,8 +141,9 @@ var slider = function slider() {
     }
     isoWrapper.style.overflow = "";
     document.body.style.overflow = "";
+    slider.removeEventListener("touchmove", touchmove, event);
   }
-  var c = debounc(touch, 100);
+  var c = debounc(touchmove, 100);
   function debounc(fn, delay) {
     var se;
     return function () {
