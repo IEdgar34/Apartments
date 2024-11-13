@@ -128,7 +128,6 @@ var slider = function slider() {
   }
   f.addEventListener("touchend", touchmove, event);
   function touchmove(ev) {
-    alert("touch move сработал");
     end = 0;
     // end = ev[0].changedTouches[0].clientX;
     end = ev.changedTouches[0].clientX;
