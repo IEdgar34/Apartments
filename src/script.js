@@ -52,7 +52,9 @@ var slider = function slider() {
       slider.style.transform = "translateX(-".concat(this.size, "px)");
     },
     next: function next() {
+      alert("функция запускатся,условие не проходит");
       if (this.size < this.maxW) {
+        alert("функция запускатся,условие прошло");
         this.size += this.width;
         this.transform();
         this.dotscounter();
@@ -60,7 +62,9 @@ var slider = function slider() {
       }
     },
     prev: function prev() {
+      alert("функция запускатся,условие не проходит");
       if (this.size > 0) {
+        alert("функция запускатся,условие прошло");
         this.size -= this.width;
         this.transform();
         this.dotscounter();
