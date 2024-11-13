@@ -134,11 +134,11 @@ var slider = function slider() {
   }
   slider.addEventListener("touchend", touchmove, event);
   function touchmove(ev) {
+    alert("touch move сработал");
     end = 0;
     console.log();
     // end = ev[0].changedTouches[0].clientX;
     end = ev.changedTouches[0].clientX;
-    alert("touch move сработал");
     if (start - end < 0) {
       s.prev();
     } else {
