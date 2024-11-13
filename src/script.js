@@ -77,8 +77,6 @@ var slider = function slider() {
       this.set = setTimeout(function () {
         resizeEnd = window.innerWidth;
         if (resizeEnd - resizeStart > 18 || resizeEnd - resizeStart < -18) {
-          alert(window.innerWidth);
-          alert(isoWrapper.clientWidth);
           _this.width = sliderItem[0].offsetWidth + +parseInt(window.getComputedStyle(slider).columnGap);
           _this.maxW = sliderItem[0].offsetWidth * (sliderItem.length - 1);
           _this.size = _this.width * _this.dots;
