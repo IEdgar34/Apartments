@@ -1,11 +1,12 @@
 const slider = () => {
     const slider = document.querySelector(".reviews__slider_block");
+    const moveEndWrapper = document.querySelector(".reviews__slider");
+    const moveWrapp = document.querySelector(".reviews__slider_wrap");
     const sliderItem = document.querySelectorAll(".reviews__slider_item");
     const next = document.querySelector(".reviews__slider_next");
     const prev = document.querySelector(".reviews__slider_prev");
     const dot = document.querySelectorAll(".reviews__slider_dots-dot");
     const isoWrapper = document.querySelector(".ioswrapper");
-    const f = document.querySelector(".reviews__slider")
     let t = true;
     let resizeStart = 0;
     let resizeEnd = 0;
@@ -87,35 +88,40 @@ const slider = () => {
     dotsMove();
     let start = 0;
     let end = 0;
-    slider.addEventListener("touchstart",  touchS,event);
+    let moveEnd;
+    slider.addEventListener("touchstart", touchS, event);
     function touchS(event) {
         isoWrapper.style.overflow = "hidden";
         document.body.style.overflow = "hidden";
         start = event.touches[0].clientX;
-        /* slider.addEventListener("touchstart",  touchS,event); */
-        
     }
-    f.addEventListener("touchend",  touchmove,event);
+    moveEndWrapper.addEventListener("touchend", touchmove, event);
     function touchmove(ev) {
         end = 0;
-        // end = ev[0].changedTouches[0].clientX;
         end = ev.changedTouches[0].clientX;
-        if (start - end < 0) {
+        /* if (start - end < 0) {
             s.prev();
         } else {
             s.next();
         }
-         isoWrapper.style.overflow = "";
+        isoWrapper.style.overflow = "";
+        document.body.style.overflow = ""; */
+        /*  console.log(moveEnd - start); */
+        if (moveEnd - start > 100 && s.size > 0) {
+            s.prev();
+        } else if (moveEnd - start < -100 && s.size < s.maxW) {
+            s.next();
+        } else {
+            slider.style.transform = `translateX(-${s.size}px)`;
+        }
+        isoWrapper.style.overflow = "";
         document.body.style.overflow = "";
     }
 
-    let c = debounc(touchmove, 100);
-    function debounc(fn, delay) {
-        let se;
-        return function (...args) {
-            clearTimeout(se);
-            se = setTimeout(() => fn.call(this, args), delay);
-        };
-    }
+    moveWrapp.addEventListener("touchmove", (e) => {
+        moveEnd = e.touches[0].clientX;
+        console.log(s.size + -(moveEnd - start));
+        slider.style.transform = `translateX(-${s.size + -(moveEnd - start)}px)`;
+    });
 };
 export { slider };

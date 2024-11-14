@@ -32,12 +32,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var slider = function slider() {
   var slider = document.querySelector(".reviews__slider_block");
+  var moveEndWrapper = document.querySelector(".reviews__slider");
+  var moveWrapp = document.querySelector(".reviews__slider_wrap");
   var sliderItem = document.querySelectorAll(".reviews__slider_item");
   var next = document.querySelector(".reviews__slider_next");
   var prev = document.querySelector(".reviews__slider_prev");
   var dot = document.querySelectorAll(".reviews__slider_dots-dot");
   var isoWrapper = document.querySelector(".ioswrapper");
-  var f = document.querySelector(".reviews__slider");
   var t = true;
   var resizeStart = 0;
   var resizeEnd = 0;
@@ -119,40 +120,40 @@ var slider = function slider() {
   dotsMove();
   var start = 0;
   var end = 0;
+  var moveEnd;
   slider.addEventListener("touchstart", touchS, event);
   function touchS(event) {
     isoWrapper.style.overflow = "hidden";
     document.body.style.overflow = "hidden";
     start = event.touches[0].clientX;
-    /* slider.addEventListener("touchstart",  touchS,event); */
   }
-  f.addEventListener("touchend", touchmove, event);
+  moveEndWrapper.addEventListener("touchend", touchmove, event);
   function touchmove(ev) {
     end = 0;
-    // end = ev[0].changedTouches[0].clientX;
     end = ev.changedTouches[0].clientX;
-    if (start - end < 0) {
-      s.prev();
+    /* if (start - end < 0) {
+        s.prev();
     } else {
+        s.next();
+    }
+    isoWrapper.style.overflow = "";
+    document.body.style.overflow = ""; */
+    /*  console.log(moveEnd - start); */
+    if (moveEnd - start > 100 && s.size > 0) {
+      s.prev();
+    } else if (moveEnd - start < -100 && s.size < s.maxW) {
       s.next();
+    } else {
+      slider.style.transform = "translateX(-".concat(s.size, "px)");
     }
     isoWrapper.style.overflow = "";
     document.body.style.overflow = "";
   }
-  var c = debounc(touchmove, 100);
-  function debounc(fn, delay) {
-    var se;
-    return function () {
-      var _this2 = this;
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-      clearTimeout(se);
-      se = setTimeout(function () {
-        return fn.call(_this2, args);
-      }, delay);
-    };
-  }
+  moveWrapp.addEventListener("touchmove", function (e) {
+    moveEnd = e.touches[0].clientX;
+    console.log(s.size + -(moveEnd - start));
+    slider.style.transform = "translateX(-".concat(s.size + -(moveEnd - start), "px)");
+  });
 };
 
 
