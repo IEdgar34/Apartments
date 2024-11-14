@@ -7,9 +7,7 @@ const slider = () => {
     const prev = document.querySelector(".reviews__slider_prev");
     const dot = document.querySelectorAll(".reviews__slider_dots-dot");
     const isoWrapper = document.querySelector(".ioswrapper");
-    let t = true;
-    let resizeStart = 0;
-    let resizeEnd = 0;
+    
     const s = {
         width: sliderItem[0].offsetWidth + +parseInt(window.getComputedStyle(slider).columnGap),
         maxW: sliderItem[0].offsetWidth * (sliderItem.length - 1),
@@ -38,7 +36,6 @@ const slider = () => {
             }
         },
         resize() {
-            console.log("d");
             this.width = sliderItem[0].offsetWidth + +parseInt(window.getComputedStyle(slider).columnGap);
             this.maxW = sliderItem[0].offsetWidth * (sliderItem.length - 1);
             this.size = this.width * this.dots;
@@ -46,25 +43,6 @@ const slider = () => {
             this.dotscounter();
             addClass(dot, this.dots, "reviews__slider_dots-dot_active");
             clearTimeout(this.set);
-            /*  if (t) {
-                resizeStart = window.innerWidth;
-                t = false;
-            }
-            this.set = setTimeout(() => {
-                resizeEnd = window.innerWidth;
-                if (resizeEnd - resizeStart > 5 || resizeEnd - resizeStart < -5) {
-                    console.log("d");
-                    this.width = sliderItem[0].offsetWidth + +parseInt(window.getComputedStyle(slider).columnGap);
-                    this.maxW = sliderItem[0].offsetWidth * (sliderItem.length - 1);
-                    this.size = this.width * this.dots;
-                    this.transform();
-                    this.dotscounter();
-                    addClass(dot, this.dots, "reviews__slider_dots-dot_active");
-                    t = true;
-                    resizeEnd = 0;
-                    resizeStart = 0;
-                }
-            }, 100); */
         },
         dotscounter() {
             this.dots = 0;
@@ -73,9 +51,7 @@ const slider = () => {
             }
         },
     };
-    next.addEventListener("click", s.next.bind(s));
-    prev.addEventListener("click", s.prev.bind(s));
-    window.addEventListener("resize", s.resize.bind(s));
+
     function addClass(arrElemets, counter, classSelector) {
         arrElemets.forEach((item) => {
             item.classList.remove(classSelector);
@@ -94,8 +70,11 @@ const slider = () => {
         });
     }
     dotsMove();
+    next.addEventListener("click", s.next.bind(s));
+    prev.addEventListener("click", s.prev.bind(s));
+    window.addEventListener("resize", s.resize.bind(s));
+
     let start = 0;
-    let end = 0;
     let moveEnd;
     slider.addEventListener("touchstart", touchS, event);
     function touchS(event) {
@@ -105,16 +84,6 @@ const slider = () => {
     }
     moveEndWrapper.addEventListener("touchend", touchmove, event);
     function touchmove(ev) {
-        end = 0;
-        end = ev.changedTouches[0].clientX;
-        /* if (start - end < 0) {
-            s.prev();
-        } else {
-            s.next();
-        }
-        isoWrapper.style.overflow = "";
-        document.body.style.overflow = ""; */
-        /*  console.log(moveEnd - start); */
         if (moveEnd - start > 100 && s.size > 0) {
             s.prev();
         } else if (moveEnd - start < -100 && s.size < s.maxW) {
@@ -128,8 +97,11 @@ const slider = () => {
 
     moveWrapp.addEventListener("touchmove", (e) => {
         moveEnd = e.touches[0].clientX;
-        console.log(s.size + -(moveEnd - start));
-        slider.style.transform = `translateX(-${s.size + -(moveEnd - start)}px)`;
+        if (s.size <= 0) {
+            slider.style.transform = `translateX(${s.size + (moveEnd - start)}px)`;
+        } else {
+            slider.style.transform = `translateX(-${s.size + -(moveEnd - start)}px)`;
+        }
     });
 };
 export { slider };

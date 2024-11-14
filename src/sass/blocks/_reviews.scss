@@ -28,7 +28,7 @@
     &__slider {
         width: 100%;
         height: 292px;
-        overflow-x: hidden;
+        overflow: hidden;
 
         &_block {
             transition: transform 0.6s;
@@ -45,7 +45,6 @@
                     box-shadow: 0px 0px 17px 7px #ff7a00;
                 }
             }
-            
         }
         &_prev {
             left: -2vw;
@@ -76,17 +75,74 @@
             display: block;
             width: 630px;
             height: 100%;
+            padding: 40px;
             border-radius: 5px;
-            background-image: url("../images/slider1-min.webp");
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            @media (max-width: 673px) {
-                width: 100%;
+            background-color: var(--white);
+            /* background-image: url("../images/slider1-min.webp"); */
+            /* background-size: 100% 100%;
+            background-repeat: no-repeat; */
+            &-title {
+                display: inline-block;
+                color: rgb(43, 122, 241);
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 24px;
+                @media (max-width: 440px) {
+                    font-size: 16px;
+                }
             }
             img {
-                display: block;
+                @media (max-width: 370px) {
+                    display: block;
+                    width: 80px;
+                }
+            }
+            &-descr {
+                margin-top: 27px;
+                margin-bottom: 38px;
+                color: rgb(17, 17, 17);
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 22px;
+                @media (max-width: 673px) {
+                    margin-top: 50px;
+                    margin-bottom: 90px;
+                }
+                @media (max-width: 673px) {
+                    margin-bottom: 48px;
+                }
+                @media (max-width: 370px) {
+                    line-height: 17px;
+                    font-size: 13px;
+                }
+            }
+            &-name {
+                margin-bottom: 5px;
+                color: rgb(43, 122, 241);
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 130%;
+            }
+            &-city {
+                color: rgb(17, 17, 17);
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 130%;
+            }
+            &-date {
+                color: rgb(17, 17, 17);
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 17px;
+            }
+            &-df {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            @media (max-width: 673px) {
                 width: 100%;
-                height: 100%;
+                padding: 10px;
             }
         }
         &_dots {
