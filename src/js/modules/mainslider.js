@@ -38,14 +38,22 @@ const slider = () => {
             }
         },
         resize() {
+            console.log("d");
+            this.width = sliderItem[0].offsetWidth + +parseInt(window.getComputedStyle(slider).columnGap);
+            this.maxW = sliderItem[0].offsetWidth * (sliderItem.length - 1);
+            this.size = this.width * this.dots;
+            this.transform();
+            this.dotscounter();
+            addClass(dot, this.dots, "reviews__slider_dots-dot_active");
             clearTimeout(this.set);
-            if (t) {
+            /*  if (t) {
                 resizeStart = window.innerWidth;
                 t = false;
             }
             this.set = setTimeout(() => {
                 resizeEnd = window.innerWidth;
-                if (resizeEnd - resizeStart > 18 || resizeEnd - resizeStart < -18) {
+                if (resizeEnd - resizeStart > 5 || resizeEnd - resizeStart < -5) {
+                    console.log("d");
                     this.width = sliderItem[0].offsetWidth + +parseInt(window.getComputedStyle(slider).columnGap);
                     this.maxW = sliderItem[0].offsetWidth * (sliderItem.length - 1);
                     this.size = this.width * this.dots;
@@ -56,7 +64,7 @@ const slider = () => {
                     resizeEnd = 0;
                     resizeStart = 0;
                 }
-            }, 100);
+            }, 100); */
         },
         dotscounter() {
             this.dots = 0;
