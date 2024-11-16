@@ -7,7 +7,8 @@ const slider = () => {
     const prev = document.querySelector(".reviews__slider_prev");
     const dot = document.querySelectorAll(".reviews__slider_dots-dot");
     const isoWrapper = document.querySelector(".ioswrapper");
-    
+   
+
     const s = {
         width: sliderItem[0].offsetWidth + +parseInt(window.getComputedStyle(slider).columnGap),
         maxW: sliderItem[0].offsetWidth * (sliderItem.length - 1),
@@ -103,5 +104,8 @@ const slider = () => {
             slider.style.transform = `translateX(-${s.size + -(moveEnd - start)}px)`;
         }
     });
+    
+
+   
 };
 export { slider };

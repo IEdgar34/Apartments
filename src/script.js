@@ -158,6 +158,141 @@ var menu = function menu() {
 
 /***/ }),
 
+/***/ "./src/js/modules/pages.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/pages.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   pagesHistory: () => (/* binding */ pagesHistory)
+/* harmony export */ });
+/* harmony import */ var core_js_modules_es_array_for_each_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.for-each.js */ "./node_modules/core-js/modules/es.array.for-each.js");
+/* harmony import */ var core_js_modules_es_array_for_each_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_for_each_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.function.name.js */ "./node_modules/core-js/modules/es.function.name.js");
+/* harmony import */ var core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_function_name_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/web.dom-collections.for-each.js */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+/* harmony import */ var core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_for_each_js__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+var pagesHistory = function pagesHistory() {
+  var wrapper = document.querySelector(".section__main");
+  var layerHeader = document.querySelector(".section__header");
+  var all = document.querySelectorAll("a");
+  all.forEach(function (item) {
+    item.addEventListener("click", function (e) {
+      e.preventDefault();
+    });
+  });
+  var obj = {
+    homePage: {
+      name: "home",
+      title: "Аренда квартир",
+      "class": "home",
+      content: "<main class=\"main main__bg\" id=\"del\">\n            <div class=\"main__content\">\n            <div class=\"main__content_title-wrap\">\n            <h1 class=\"main__content_title-wrap-title\">\u0410\u0440\u0435\u043D\u0434\u0430 \u043A\u0432\u0430\u0440\u0442\u0438\u0440 \u0432\xA0\u0411\u0435\u0440\u0435\u0437\u043D\u0438\u043A\u0430\u0445</h1>\n            <h3 class=\"subtitle\">\u041D\u0430\xA0\u0434\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0439 \u0441\u0440\u043E\u043A \u0438\u043B\u0438 \u043F\u043E\u0441\u0443\u0442\u043E\u0447\u043D\u043E</h3>\n            <a href=\"#\" class=\"button main__btn apart__link\">\u0421\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u044B</a>\n            </div>\n            <div class=\"main__content_image-wrap\">\n            <img src=\"images/mainImage-min.webp\" alt=\"image\" class=\"main__content_image\" />\n            </div>\n            </div>\n            </main>\n            <div class=\"card\" id=\"del\">\n            <div class=\"container\">\n                <ul class=\"card__wrapp\">\n                    <li class=\"card__item\">\n                    <div class=\"card__item_img\">\n                    <img src=\"icons/offer.svg\" alt=\"\" />\n                        </div>\n                        <p class=\"card__item_description\">\n                        \u0417\u0430\u043A\u043B\u044E\u0447\u0430\u0435\u043C \u0434\u043E\u0433\u043E\u0432\u043E\u0440\u044B, \u043F\u0440\u0435\u0434\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0435\u0442 \u043E\u0442\u0447\u0451\u0442\u043D\u044B\u0435 \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\n                        </p>\n                        </li>\n                        <li class=\"card__item\">\n                        <div class=\"card__item_img\">\n                        <img src=\"icons/many.svg\" alt=\"\" />\n                        </div>\n                        <p class=\"card__item_description\">\u041D\u0430\u043B\u0438\u0447\u043D\u044B\u0439 \u0438\xA0\u0431\u0435\u0437\u043D\u0430\u043B\u0438\u0447\u043D\u044B\u0439 \u0440\u0430\u0441\u0447\u0451\u0442</p>\n                        </li>\n                        <li class=\"card__item\">\n                        <div class=\"card__item_img\">\n                        <img src=\"icons/time.svg\" alt=\"\" />\n                        </div>\n                        <p class=\"card__item_description\">\u0411\u0440\u043E\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u0438\xA0\u0437\u0430\u0441\u0435\u043B\u0435\u043D\u0438\u0435 \u043A\u0440\u0443\u0433\u043B\u043E\u0441\u0443\u0442\u043E\u0447\u043D\u043E</p>\n                        </li>\n                        <li class=\"card__item\">\n                        <div class=\"card__item_img\">\n                        <img src=\"icons/save.svg\" alt=\"\" />\n                        </div>\n                        <p class=\"card__item_description\">\u041F\u043E\u043B\u043D\u0430\u044F \u043A\u043E\u043D\u0444\u0438\u0434\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u044C</p>\n                        </li>\n                        </ul>\n                        </div>\n                        </div>\n                        <div class=\"apartments\" id=\"del\">\n                        <div class=\"container\">\n                        <div class=\"apartments__wrapp\">\n                        <h1 class=\"title apartments__title\">\u041D\u0430\u0448\u0438 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B</h1>\n                        <ul class=\"apartments__cards\">\n                        <li class=\"apartments__card\">\n                        <figure>\n                        <img src=\"images/apart1-min.webp\" alt=\"\" loading=\"lazy\" />\n                        </figure>\n                        <div class=\"apartments__card_descr\">\n                        <h3 class=\"apartments__card_descr-title\">\u041E\u0434\u043D\u043E\u043A\u043E\u043C\u043D\u0430\u0442\u043D\u0430\u044F \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0430</h3>\n                        <h4 class=\"apartments__card_descr-title-mob\">1 \u043A\u043E\u043C\u043D\u0430\u0442\u0430</h4>\n                        <p class=\"apartments__card_descr-price\">\u0421\u0443\u0442\u043A\u0438: <span>1\xA0500\xA0\u20BD</span></p>\n                        <div>\n                        <div>\n                        <img src=\"icons/target.svg\" alt=\"\" />\n                        <span class=\"apartments__card_descr-address\"\n                        >\u0411\u0435\u0440\u0435\u0437\u043D\u0438\u043A\u0438, \u0443\u043B.\xA0\u042E\u0431\u0438\u043B\u0435\u0439\u043D\u0430\u044F 108</span\n                        >\n                        </div>\n                        <button class=\"button apartments__card_descr-btn\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</button>\n                        </div>\n                        </div>\n                        </li>\n                        <li class=\"apartments__card\">\n                        <figure>\n                        <img src=\"images/apart2-min.webp\" alt=\"\" loading=\"lazy\" />\n                        </figure>\n                        <div class=\"apartments__card_descr\">\n                        <h3 class=\"apartments__card_descr-title\">\u0422\u0440\u0451\u0445\u043A\u043E\u043C\u043D\u0430\u0442\u043D\u0430\u044F \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0430</h3>\n                        <h4 class=\"apartments__card_descr-title-mob\">3 \u043A\u043E\u043C\u043D\u0430\u0442\u044B</h4>\n                        <p class=\"apartments__card_descr-price\">\u0421\u0443\u0442\u043A\u0438: <span>1\xA0300\xA0\u20BD</span></p>\n                        <div>\n                        <div>\n                        <img src=\"icons/target.svg\" alt=\"\" />\n                        <span class=\"apartments__card_descr-address\"\n                        >\u0411\u0435\u0440\u0435\u0437\u043D\u0438\u043A\u0438, \u0443\u043B.\xA0\u0413\u0430\u0433\u0430\u0440\u0438\u043D\u0430 89</span\n                        >\n                        </div>\n                        <button class=\"button apartments__card_descr-btn\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</button>\n                        </div>\n                        </div>\n                        </li>\n                        <li class=\"apartments__card\">\n                        <figure>\n                        <img src=\"images/apart3-min.webp\" alt=\"\" loading=\"lazy\" />\n                        </figure>\n                        <div class=\"apartments__card_descr\">\n                        <h3 class=\"apartments__card_descr-title\">\u0414\u0432\u0443\u0445\u043A\u043E\u043C\u043D\u0430\u0442\u043D\u0430\u044F \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0430</h3>\n                        <h4 class=\"apartments__card_descr-title-mob\">2\xA0\u043A\u043E\u043C\u043D\u0430\u0442\u044B</h4>\n                        <p class=\"apartments__card_descr-price\">\u0421\u0443\u0442\u043A\u0438: <span>1\xA0700\xA0\u20BD</span></p>\n                        <div>\n                        <div>\n                        <img src=\"icons/target.svg\" alt=\"\" />\n                        <span class=\"apartments__card_descr-address\"\n                        >\u0411\u0435\u0440\u0435\u0437\u043D\u0438\u043A\u0438, \u0443\u043B.\xA0\u0412\u043B\u0430\u0441\u043E\u0432\u0430 14</span\n                        >\n                        </div>\n                        <button class=\"button apartments__card_descr-btn\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</button>\n                        </div>\n                        </div>\n                        </li>\n                        <li class=\"apartments__card\">\n                        <figure>\n                        <img src=\"images/apart4-min.webp\" alt=\"\" loading=\"lazy\" />\n                        </figure>\n                        <div class=\"apartments__card_descr\">\n                        <h3 class=\"apartments__card_descr-title\">\u041F\u044F\u0442\u0438\u043A\u043E\u043C\u043D\u0430\u0442\u043D\u0430\u044F \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0430</h3>\n                        <h4 class=\"apartments__card_descr-title-mob\">5\xA0\u043A\u043E\u043C\u043D\u0430\u0442</h4>\n                        <p class=\"apartments__card_descr-price\">\u0421\u0443\u0442\u043A\u0438: <span>4\xA0100\xA0\u20BD</span></p>\n                        <div>\n                        <div>\n                        <img src=\"icons/target.svg\" alt=\"\" />\n                        <span class=\"apartments__card_descr-address\"\n                        >\u0411\u0435\u0440\u0435\u0437\u043D\u0438\u043A\u0438, \u0443\u043B.\xA0\u0428\u043C\u0438\u0434\u0442\u0430 10</span\n                        >\n                        </div>\n                        <button class=\"button apartments__card_descr-btn\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</button>\n                        </div>\n                        </div>\n                        </li>\n                        </ul>\n                        <a class=\"apartments__link apart__link\" href=\"#\">\u0421\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0432\u0441\u0435\xA0\u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B</a>\n                        </div>\n                        </div>\n                        </div>\n                        "
+    },
+    header: "\n                    <section class=\"section__header\">\n                    <div class=\"container\">\n                    <header class=\"header\">\n                    <div class=\"header__menu-burger\"><span></span><span></span><span></span></div>\n                    <a href=\"#\" class=\"header__logo\">\n                    <img src=\"icons/logo.svg\" alt=\"\" />\n                    </a>\n                    <nav class=\"nav\">\n                    <ul class=\"nav__list\">\n                    <li class=\"nav__item\">\n                    <a href=\"#\" class=\"nav__list-item_link\">\u0413\u043B\u0430\u0432\u043D\u0430\u044F</a>\n                    </li>\n                    <li class=\"nav__item\">\n                    <a href=\"#\" class=\"nav__list-item_link\">\u041A\u0432\u0430\u0440\u0442\u0438\u0440\u044B</a>\n                    </li>\n                    <li class=\"nav__item\">\n                    <a href=\"#\" class=\"nav__list-item_link\">\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B</a>\n                    </li>\n                    <li class=\"nav__item\">\n                    <a href=\"#\" class=\"nav__list-item_link\">\u041E\xA0\u043D\u0430\u0441</a>\n                    </li>\n                    </ul>\n                    </nav>\n                    <div class=\"info\">\n                    <div>\n                    <a href=\"mailto:mailto:mail@yandex.ru\">\n                    <img src=\"icons/mail.svg\" alt=\"\" />\n                    </a>\n                    <a href=\"mailto:mail@yandex.ru\">mail@yandex.ru</a>\n                    </div>\n                    <div>\n                    <a href=\"tel:+79197142500\">\n                    <img src=\"icons/phon.svg\" alt=\"\" />\n                    </a>\n                    <a href=\"tel:+79197142500\">+7\xA0(919)\xA0714-25-00</a>\n                    </div>\n                    <a href=\"#\" class=\"button info__btn\">\u0417\u0430\u043A\u0430\u0437\u0430\u0442\u044C \u0437\u0432\u043E\u043D\u043E\u043A</a>\n                    </div>\n                    </header>\n                    </div>\n                    </section>\n                    ",
+    apartments: {
+      name: "apartments",
+      title: "Наши квартиры",
+      "class": "apartmentsall",
+      content: "<div class=\"container\">\n                        <h1 class=\"title apartmentsall__title\">\u041D\u0430\u0448\u0438 \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u044B</h1>\n                        <ul class=\"apartmentsall__cards\">\n                        <li class=\"apartmentsall__cards_card\">\n                        <img src=\"images/apartall-min.webp\" alt=\"\" class=\"apartmentsall__cards_card-img\" />\n                        <h1 class=\"apartmentsall__cards_card-title\">\u041E\u0434\u043D\u043E\u043A\u043E\u043C\u043D\u0430\u0442\u043D\u0430\u044F \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0430</h1>\n                        <p class=\"apartmentsall__cards_card-descr\">\n                        \u0421\u0414\u0410\u041C 1- \u0443\u044E \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443 \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u043D\u043E\u0439 \u043F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u043A\u0438 \u0441 \u043B\u043E\u0434\u0436\u0438\u0435\u0439, \u0435\u0441\u0442\u044C \u0432\u0441\u0451 \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E\u0435 \u0441\u043F\u0430\u043B\u044C\u043D\u044B\u0435\n                        \u043C\u0435\u0441\u0442\u0430 \u043A\u0440\u043E\u0432\u0430\u0442\u044C 2...\n                        </p>\n                        <p class=\"apartmentsall__cards_card-price\">1\xA0200\xA0\u20BD \u0437\u0430 \u0441\u0443\u0442\u043A\u0438</p>\n                        <p class=\"apartmentsall__cards_card-address\">\n                        <img src=\"icons/target.svg\" alt=\"\" class=\"apartmentsall__cards_card-icon\" />\n                        <span>\u0411\u0435\u0440\u0435\u0437\u043D\u0438\u043A\u0438, \u0443\u043B.\xA0\u042E\u0431\u0438\u043B\u0435\u0439\u043D\u0430\u044F 108</span>\n                        </p>\n                        <a href=\"#\" class=\"button apartmentsall__cards_card-btn\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</a>\n                        </li>\n                        <li class=\"apartmentsall__cards_card\">\n                        <img src=\"images/apartall1-min.webp\" alt=\"\" class=\"apartmentsall__cards_card-img\" />\n                        <h1 class=\"apartmentsall__cards_card-title\">\u041E\u0434\u043D\u043E\u043A\u043E\u043C\u043D\u0430\u0442\u043D\u0430\u044F \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0430</h1>\n                        <p class=\"apartmentsall__cards_card-descr\">\n                        \u0421\u0414\u0410\u041C 1- \u0443\u044E \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443 \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u043D\u043E\u0439 \u043F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u043A\u0438 \u0441 \u043B\u043E\u0434\u0436\u0438\u0435\u0439, \u0435\u0441\u0442\u044C \u0432\u0441\u0451 \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E\u0435 \u0441\u043F\u0430\u043B\u044C\u043D\u044B\u0435\n                        \u043C\u0435\u0441\u0442\u0430 \u043A\u0440\u043E\u0432\u0430\u0442\u044C 2...\n                        </p>\n                        <p class=\"apartmentsall__cards_card-price\">1\xA0200\xA0\u20BD \u0437\u0430 \u0441\u0443\u0442\u043A\u0438</p>\n                        <p class=\"apartmentsall__cards_card-address\">\n                        <img src=\"icons/target.svg\" alt=\"\" class=\"apartmentsall__cards_card-icon\" />\n                        <span>\u0411\u0435\u0440\u0435\u0437\u043D\u0438\u043A\u0438, \u0443\u043B.\xA0\u042E\u0431\u0438\u043B\u0435\u0439\u043D\u0430\u044F 108</span>\n                        </p>\n                        <a href=\"#\" class=\"button apartmentsall__cards_card-btn\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</a>\n                        </li>\n                        <li class=\"apartmentsall__cards_card\">\n                        <img src=\"images/apartall3-min.webp\" alt=\"\" class=\"apartmentsall__cards_card-img\" />\n                        <h1 class=\"apartmentsall__cards_card-title\">\u041E\u0434\u043D\u043E\u043A\u043E\u043C\u043D\u0430\u0442\u043D\u0430\u044F \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0430</h1>\n                        <p class=\"apartmentsall__cards_card-descr\">\n                        \u0421\u0414\u0410\u041C 1- \u0443\u044E \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443 \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u043D\u043E\u0439 \u043F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u043A\u0438 \u0441 \u043B\u043E\u0434\u0436\u0438\u0435\u0439, \u0435\u0441\u0442\u044C \u0432\u0441\u0451 \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E\u0435 \u0441\u043F\u0430\u043B\u044C\u043D\u044B\u0435\n                        \u043C\u0435\u0441\u0442\u0430 \u043A\u0440\u043E\u0432\u0430\u0442\u044C 2...\n                        </p>\n                        <p class=\"apartmentsall__cards_card-price\">1\xA0200\xA0\u20BD \u0437\u0430 \u0441\u0443\u0442\u043A\u0438</p>\n                        <p class=\"apartmentsall__cards_card-address\">\n                        <img src=\"icons/target.svg\" alt=\"\" class=\"apartmentsall__cards_card-icon\" />\n                        <span>\u0411\u0435\u0440\u0435\u0437\u043D\u0438\u043A\u0438, \u0443\u043B.\xA0\u042E\u0431\u0438\u043B\u0435\u0439\u043D\u0430\u044F 108</span>\n                        </p>\n                        <a href=\"#\" class=\"button apartmentsall__cards_card-btn\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</a>\n                        </li>\n                        <li class=\"apartmentsall__cards_card\">\n                        <img src=\"images/apartall4-min.webp\" alt=\"\" class=\"apartmentsall__cards_card-img\" />\n                        <h1 class=\"apartmentsall__cards_card-title\">\u041E\u0434\u043D\u043E\u043A\u043E\u043C\u043D\u0430\u0442\u043D\u0430\u044F \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0430</h1>\n                        <p class=\"apartmentsall__cards_card-descr\">\n                        \u0421\u0414\u0410\u041C 1- \u0443\u044E \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443 \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u043D\u043E\u0439 \u043F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u043A\u0438 \u0441 \u043B\u043E\u0434\u0436\u0438\u0435\u0439, \u0435\u0441\u0442\u044C \u0432\u0441\u0451 \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E\u0435 \u0441\u043F\u0430\u043B\u044C\u043D\u044B\u0435\n                        \u043C\u0435\u0441\u0442\u0430 \u043A\u0440\u043E\u0432\u0430\u0442\u044C 2...\n                        </p>\n                        <p class=\"apartmentsall__cards_card-price\">1\xA0200\xA0\u20BD \u0437\u0430 \u0441\u0443\u0442\u043A\u0438</p>\n                        <p class=\"apartmentsall__cards_card-address\">\n                        <img src=\"icons/target.svg\" alt=\"\" class=\"apartmentsall__cards_card-icon\" />\n                        <span>\u0411\u0435\u0440\u0435\u0437\u043D\u0438\u043A\u0438, \u0443\u043B.\xA0\u042E\u0431\u0438\u043B\u0435\u0439\u043D\u0430\u044F 108</span>\n                        </p>\n                        <a href=\"#\" class=\"button apartmentsall__cards_card-btn\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</a>\n                        </li>\n                        <li class=\"apartmentsall__cards_card\">\n                        <img src=\"images/apartall5-min.webp\" alt=\"\" class=\"apartmentsall__cards_card-img\" />\n                        <h1 class=\"apartmentsall__cards_card-title\">\u041E\u0434\u043D\u043E\u043A\u043E\u043C\u043D\u0430\u0442\u043D\u0430\u044F \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0430</h1>\n                        <p class=\"apartmentsall__cards_card-descr\">\n                        \u0421\u0414\u0410\u041C 1- \u0443\u044E \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443 \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u043D\u043E\u0439 \u043F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u043A\u0438 \u0441 \u043B\u043E\u0434\u0436\u0438\u0435\u0439, \u0435\u0441\u0442\u044C \u0432\u0441\u0451 \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E\u0435 \u0441\u043F\u0430\u043B\u044C\u043D\u044B\u0435\n                        \u043C\u0435\u0441\u0442\u0430 \u043A\u0440\u043E\u0432\u0430\u0442\u044C 2...\n                        </p>\n                        <p class=\"apartmentsall__cards_card-price\">1\xA0200\xA0\u20BD \u0437\u0430 \u0441\u0443\u0442\u043A\u0438</p>\n                        <p class=\"apartmentsall__cards_card-address\">\n                        <img src=\"icons/target.svg\" alt=\"\" class=\"apartmentsall__cards_card-icon\" />\n                        <span>\u0411\u0435\u0440\u0435\u0437\u043D\u0438\u043A\u0438, \u0443\u043B.\xA0\u042E\u0431\u0438\u043B\u0435\u0439\u043D\u0430\u044F 108</span>\n                        </p>\n                        <a href=\"#\" class=\"button apartmentsall__cards_card-btn\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</a>\n                        </li>\n                        <li class=\"apartmentsall__cards_card\">\n                        <img src=\"images/apartall6-min.webp\" alt=\"\" class=\"apartmentsall__cards_card-img\" />\n                        <h1 class=\"apartmentsall__cards_card-title\">\u041E\u0434\u043D\u043E\u043A\u043E\u043C\u043D\u0430\u0442\u043D\u0430\u044F \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0430</h1>\n                        <p class=\"apartmentsall__cards_card-descr\">\n                        \u0421\u0414\u0410\u041C 1- \u0443\u044E \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443 \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u043D\u043E\u0439 \u043F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u043A\u0438 \u0441 \u043B\u043E\u0434\u0436\u0438\u0435\u0439, \u0435\u0441\u0442\u044C \u0432\u0441\u0451 \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E\u0435 \u0441\u043F\u0430\u043B\u044C\u043D\u044B\u0435\n                        \u043C\u0435\u0441\u0442\u0430 \u043A\u0440\u043E\u0432\u0430\u0442\u044C 2...\n                        </p>\n                        <p class=\"apartmentsall__cards_card-price\">1\xA0200\xA0\u20BD \u0437\u0430 \u0441\u0443\u0442\u043A\u0438</p>\n                        <p class=\"apartmentsall__cards_card-address\">\n                        <img src=\"icons/target.svg\" alt=\"\" class=\"apartmentsall__cards_card-icon\" />\n                        <span>\u0411\u0435\u0440\u0435\u0437\u043D\u0438\u043A\u0438, \u0443\u043B.\xA0\u042E\u0431\u0438\u043B\u0435\u0439\u043D\u0430\u044F 108</span>\n                        </p>\n                        <a href=\"#\" class=\"button apartmentsall__cards_card-btn\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</a>\n                        </li>\n                        <li class=\"apartmentsall__cards_card\">\n                        <img src=\"images/apartall7-min.webp\" alt=\"\" class=\"apartmentsall__cards_card-img\" />\n                        <h1 class=\"apartmentsall__cards_card-title\">\u041E\u0434\u043D\u043E\u043A\u043E\u043C\u043D\u0430\u0442\u043D\u0430\u044F \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0430</h1>\n                        <p class=\"apartmentsall__cards_card-descr\">\n                        \u0421\u0414\u0410\u041C 1- \u0443\u044E \u043A\u0432\u0430\u0440\u0442\u0438\u0440\u0443 \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u043D\u043E\u0439 \u043F\u043B\u0430\u043D\u0438\u0440\u043E\u0432\u043A\u0438 \u0441 \u043B\u043E\u0434\u0436\u0438\u0435\u0439, \u0435\u0441\u0442\u044C \u0432\u0441\u0451 \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E\u0435 \u0441\u043F\u0430\u043B\u044C\u043D\u044B\u0435\n                        \u043C\u0435\u0441\u0442\u0430 \u043A\u0440\u043E\u0432\u0430\u0442\u044C 2...\n                        </p>\n                        <p class=\"apartmentsall__cards_card-price\">1\xA0200\xA0\u20BD \u0437\u0430 \u0441\u0443\u0442\u043A\u0438</p>\n                        <p class=\"apartmentsall__cards_card-address\">\n                        <img src=\"icons/target.svg\" alt=\"\" class=\"apartmentsall__cards_card-icon\" />\n                        <span>\u0411\u0435\u0440\u0435\u0437\u043D\u0438\u043A\u0438, \u0443\u043B.\xA0\u042E\u0431\u0438\u043B\u0435\u0439\u043D\u0430\u044F 108</span>\n                        </p>\n                        <a href=\"#\" class=\"button apartmentsall__cards_card-btn\">\u041F\u043E\u0434\u0440\u043E\u0431\u043D\u0435\u0435</a>\n                        </li>\n                        </ul>\n                        </div>"
+    }
+  };
+  history.replaceState(obj.homePage, "", document.location.href);
+  var historyApi = {
+    home: function home(classSelector, addContent, titleName) {
+      this.displayContent(classSelector, addContent, titleName);
+      apartBtn();
+    },
+    apartments: function apartments(classSelector, addContent, titleName) {
+      this.displayContent(classSelector, addContent, titleName);
+    },
+    displayContent: function displayContent(classSelector, addContent, titleName) {
+      removeElements(elementsToRemove("#del"));
+      var div = document.createElement("div");
+      div.setAttribute("id", "del");
+      div.classList.add(classSelector);
+      div.innerHTML = addContent;
+      wrapper.insertAdjacentElement("afterbegin", div);
+      document.querySelector("title").textContent = titleName;
+    }
+  };
+  window.addEventListener("popstate", function (e) {
+    e.preventDefault();
+    if (e.state) {
+      historyApi[e.state.name](e.state["class"], e.state.content, e.state.title);
+      if (e.state.name === "apartments") {
+        layerHeader.classList.add("apartmentsall__header");
+      } else {
+        layerHeader.classList.remove("apartmentsall__header");
+      }
+    } else {
+      console.log("not state");
+    }
+  });
+  function apartBtn() {
+    var link = document.querySelectorAll(".apart__link");
+    link.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        menuClose();
+        e.preventDefault();
+        if (history.state.name !== "apartments") {
+          history.pushState(obj.apartments, "", "#apart");
+          historyApi.apartments("apartmentsall", obj.apartments.content, obj.apartments.title);
+          layerHeader.classList.add("apartmentsall__header");
+        }
+      });
+    });
+  }
+  apartBtn();
+  function homeBtn() {
+    var link = document.querySelectorAll(".home__link");
+    link.forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        menuClose();
+        e.preventDefault();
+        if (history.state.name !== "home") {
+          history.pushState(obj.homePage, "", "#home");
+          historyApi.home("home", obj.homePage.content, obj.homePage.title);
+          layerHeader.classList.remove("apartmentsall__header");
+        }
+      });
+    });
+  }
+  homeBtn();
+  function removeElements(arr) {
+    arr.forEach(function (item) {
+      if (item) {
+        item.remove();
+      }
+    });
+  }
+  function elementsToRemove(id) {
+    var arr = document.querySelectorAll(id);
+    return arr;
+  }
+  function menuClose() {
+    if (window.innerWidth <= 1000) {
+      var m = document.querySelector(".header__menu-burger");
+      var n = document.querySelector(".nav");
+      var iosWrap = document.querySelector(".ioswrapper");
+      m.classList.remove("header__menu-burger_active");
+      n.classList.remove("nav_active");
+      document.body.classList.remove("body__overflow");
+      iosWrap.classList.remove("body__overflow");
+    }
+  }
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/a-callable.js":
 /*!******************************************************!*\
   !*** ./node_modules/core-js/internals/a-callable.js ***!
@@ -556,6 +691,25 @@ module.exports = function (bitmap, value) {
     writable: !(bitmap & 4),
     value: value
   };
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/define-built-in-accessor.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/core-js/internals/define-built-in-accessor.js ***!
+  \********************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+
+var makeBuiltIn = __webpack_require__(/*! ../internals/make-built-in */ "./node_modules/core-js/internals/make-built-in.js");
+var defineProperty = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js");
+
+module.exports = function (target, name, descriptor) {
+  if (descriptor.get) makeBuiltIn(descriptor.get, name, { getter: true });
+  if (descriptor.set) makeBuiltIn(descriptor.set, name, { setter: true });
+  return defineProperty.f(target, name, descriptor);
 };
 
 
@@ -2446,6 +2600,42 @@ $({ target: 'Function', proto: true, forced: Function.bind !== bind }, {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/modules/es.function.name.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.function.name.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+
+var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
+var FUNCTION_NAME_EXISTS = (__webpack_require__(/*! ../internals/function-name */ "./node_modules/core-js/internals/function-name.js").EXISTS);
+var uncurryThis = __webpack_require__(/*! ../internals/function-uncurry-this */ "./node_modules/core-js/internals/function-uncurry-this.js");
+var defineBuiltInAccessor = __webpack_require__(/*! ../internals/define-built-in-accessor */ "./node_modules/core-js/internals/define-built-in-accessor.js");
+
+var FunctionPrototype = Function.prototype;
+var functionToString = uncurryThis(FunctionPrototype.toString);
+var nameRE = /function\b(?:\s|\/\*[\S\s]*?\*\/|\/\/[^\n\r]*[\n\r]+)*([^\s(/]*)/;
+var regExpExec = uncurryThis(nameRE.exec);
+var NAME = 'name';
+
+// Function instances `.name` property
+// https://tc39.es/ecma262/#sec-function-instances-name
+if (DESCRIPTORS && !FUNCTION_NAME_EXISTS) {
+  defineBuiltInAccessor(FunctionPrototype, NAME, {
+    configurable: true,
+    get: function () {
+      try {
+        return regExpExec(nameRE, functionToString(this))[1];
+      } catch (error) {
+        return '';
+      }
+    }
+  });
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/modules/es.object.to-string.js":
 /*!*************************************************************!*\
   !*** ./node_modules/core-js/modules/es.object.to-string.js ***!
@@ -2607,11 +2797,14 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_mainslider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/mainslider */ "./src/js/modules/mainslider.js");
 /* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/menu */ "./src/js/modules/menu.js");
+/* harmony import */ var _modules_pages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/pages */ "./src/js/modules/pages.js");
+
 
 
 window.addEventListener("DOMContentLoaded", function () {
   (0,_modules_mainslider__WEBPACK_IMPORTED_MODULE_0__.slider)();
   (0,_modules_menu__WEBPACK_IMPORTED_MODULE_1__.menu)();
+  (0,_modules_pages__WEBPACK_IMPORTED_MODULE_2__.pagesHistory)();
 });
 })();
 

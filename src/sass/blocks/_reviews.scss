@@ -30,9 +30,7 @@
         height: 292px;
         overflow: hidden;
 
-        &_block {
-            transition: transform 0.6s;
-        }
+      
         &_btn {
             position: absolute;
             cursor: pointer;
@@ -69,6 +67,7 @@
             height: 100%;
             display: flex;
             gap: 20px;
+            transition: transform 0.6s;
         }
         &_item {
             flex-shrink: 0;
@@ -109,7 +108,7 @@
                     margin-bottom: 90px;
                 }
                 @media (max-width: 673px) {
-                    margin-bottom: 48px;
+                    margin-bottom: 31px;
                 }
                 @media (max-width: 370px) {
                     line-height: 17px;

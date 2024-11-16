@@ -1,0 +1,101 @@
+{
+    "main": {
+        "@class": "main main__bg",
+        "div": {
+            "@class": "main__content",
+            "div": [
+                {
+                    "@class": "main__content_title-wrap",
+                    "h1": {
+                        "@class": "main__content_title-wrap-title",
+                        "#text": "Аренда квартир в Березниках"
+                    },
+                    "h3": {
+                        "@class": "subtitle",
+                        "#text": "На длительный срок или посуточно"
+                    },
+                    "a": {
+                        "@href": "apartments.html",
+                        "@class": "button main__btn",
+                        "#text": "Смотреть варианты"
+                    }
+                },
+                {
+                    "@class": "main__content_image-wrap",
+                    "img": {
+                        "@src": "images/mainImage-min.webp",
+                        "@alt": "image",
+                        "@class": "main__content_image"
+                    }
+                }
+            ]
+        }
+    },
+    "div": {
+        "@class": "card",
+        "div": {
+            "@class": "container",
+            "ul": {
+                "@class": "card__wrapp",
+                "li": [
+                    {
+                        "@class": "card__item",
+                        "div": {
+                            "@class": "card__item_img",
+                            "img": {
+                                "@src": "icons/offer.svg",
+                                "@alt": ""
+                            }
+                        },
+                        "p": {
+                            "@class": "card__item_description",
+                            "#text": "Заключаем договоры, предоставляет отчётные документы"
+                        }
+                    },
+                    {
+                        "@class": "card__item",
+                        "div": {
+                            "@class": "card__item_img",
+                            "img": {
+                                "@src": "icons/many.svg",
+                                "@alt": ""
+                            }
+                        },
+                        "p": {
+                            "@class": "card__item_description",
+                            "#text": "Наличный и безналичный расчёт"
+                        }
+                    },
+                    {
+                        "@class": "card__item",
+                        "div": {
+                            "@class": "card__item_img",
+                            "img": {
+                                "@src": "icons/time.svg",
+                                "@alt": ""
+                            }
+                        },
+                        "p": {
+                            "@class": "card__item_description",
+                            "#text": "Бронирование и заселение круглосуточно"
+                        }
+                    },
+                    {
+                        "@class": "card__item",
+                        "div": {
+                            "@class": "card__item_img",
+                            "img": {
+                                "@src": "icons/save.svg",
+                                "@alt": ""
+                            }
+                        },
+                        "p": {
+                            "@class": "card__item_description",
+                            "#text": "Полная конфиденциальность"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
