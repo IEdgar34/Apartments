@@ -1,12 +1,7 @@
 const pagesHistory = () => {
     const wrapper = document.querySelector(".section__main");
     const layerHeader = document.querySelector(".section__header");
-    const all = document.querySelectorAll("a");
-    all.forEach((item) => {
-        item.addEventListener("click", (e) => {
-            e.preventDefault();
-        });
-    });
+
     let obj = {
         homePage: {
             name: "home",
@@ -321,6 +316,7 @@ const pagesHistory = () => {
         e.preventDefault();
         if (e.state) {
             historyApi[e.state.name](e.state.class, e.state.content, e.state.title);
+            preventDef();
             if (e.state.name === "apartments") {
                 layerHeader.classList.add("apartmentsall__header");
             } else {
@@ -339,6 +335,7 @@ const pagesHistory = () => {
                 if (history.state.name !== "apartments") {
                     history.pushState(obj.apartments, "", "#apart");
                     historyApi.apartments("apartmentsall", obj.apartments.content, obj.apartments.title);
+                    preventDef();
                     layerHeader.classList.add("apartmentsall__header");
                 }
             });
@@ -355,6 +352,7 @@ const pagesHistory = () => {
                 if (history.state.name !== "home") {
                     history.pushState(obj.homePage, "", "#home");
                     historyApi.home("home", obj.homePage.content, obj.homePage.title);
+                    preventDef();
                     layerHeader.classList.remove("apartmentsall__header");
                 }
             });
@@ -384,6 +382,15 @@ const pagesHistory = () => {
             document.body.classList.remove("body__overflow");
             iosWrap.classList.remove("body__overflow");
         }
+    }
+
+    function preventDef() {
+        const all = document.querySelectorAll("a");
+        all.forEach((item) => {
+            item.addEventListener("click", (e) => {
+                e.preventDefault();
+            });
+        });
     }
 };
 export { pagesHistory };

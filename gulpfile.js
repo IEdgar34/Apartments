@@ -22,7 +22,7 @@ gulp.task("build", () => {
         .pipe(plumber())
         .pipe(
             webpack({
-                mode: "development",
+                mode: "production",
                 output: {
                     filename: "script.js",
                 },

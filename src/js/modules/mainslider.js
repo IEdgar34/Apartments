@@ -7,7 +7,6 @@ const slider = () => {
     const prev = document.querySelector(".reviews__slider_prev");
     const dot = document.querySelectorAll(".reviews__slider_dots-dot");
     const isoWrapper = document.querySelector(".ioswrapper");
-   
 
     const s = {
         width: sliderItem[0].offsetWidth + +parseInt(window.getComputedStyle(slider).columnGap),
@@ -80,7 +79,6 @@ const slider = () => {
     slider.addEventListener("touchstart", touchS, event);
     function touchS(event) {
         isoWrapper.style.overflow = "hidden";
-        document.body.style.overflow = "hidden";
         start = event.touches[0].clientX;
     }
     moveEndWrapper.addEventListener("touchend", touchmove, event);
@@ -93,9 +91,9 @@ const slider = () => {
             slider.style.transform = `translateX(-${s.size}px)`;
         }
         isoWrapper.style.overflow = "";
-        document.body.style.overflow = "";
+     
     }
-
+    
     moveWrapp.addEventListener("touchmove", (e) => {
         moveEnd = e.touches[0].clientX;
         if (s.size <= 0) {
@@ -104,8 +102,6 @@ const slider = () => {
             slider.style.transform = `translateX(-${s.size + -(moveEnd - start)}px)`;
         }
     });
-    
 
-   
 };
 export { slider };

@@ -7,7 +7,6 @@ const menu = () => {
     function navTogle() {
         menuBtn.classList.toggle("header__menu-burger_active");
         nav.classList.toggle("nav_active");
-        document.body.classList.toggle("body__overflow");
         iosWrap.classList.toggle("body__overflow");
     }
 };
