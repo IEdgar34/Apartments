@@ -11,7 +11,7 @@
     }
     &__header {
         position: static !important;
-        padding: 12.5px 0 12.5px 0;
+        padding: 25px 0 12.5px 0;
         background: linear-gradient(90deg, var(--white) 50%, var(--blue) 50%);
         @media (min-width: 768px) and (max-width: 1439px) {
             background: linear-gradient(90deg, var(--white) 30%, var(--blue) 30%);

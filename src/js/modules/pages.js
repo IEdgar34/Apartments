@@ -378,5 +378,6 @@ const pagesHistory = () => {
             });
         });
     }
+    preventDef();
 };
 export { pagesHistory };

@@ -128,6 +128,12 @@
             height: 100%;
             border-radius: 5px;
             overflow: hidden;
+            &:hover {
+                img {
+                    transition: 0.5s all;
+                    transform: scale(1.2);
+                }
+            }
             &:after {
                 content: "";
                 display: block;
