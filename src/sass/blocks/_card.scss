@@ -27,7 +27,8 @@
         border-radius: 10px;
         background: rgb(255, 255, 255);
         padding: 40px 20px 20px 20px;
-        transition: 0.1s all;
+        cursor: pointer                                 ;
+        transition: 1s all;
         &:hover {
             background: linear-gradient(87.14deg, rgb(255, 122, 0) 0.156%, rgb(255, 176, 57) 99.86%);
             img {

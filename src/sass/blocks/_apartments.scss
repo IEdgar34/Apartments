@@ -128,9 +128,10 @@
             height: 100%;
             border-radius: 5px;
             overflow: hidden;
+            cursor: pointer;
             &:hover {
                 img {
-                    transition: 0.5s all;
+                    transition: 0.8s all;
                     transform: scale(1.2);
                 }
             }

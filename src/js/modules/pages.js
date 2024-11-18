@@ -371,7 +371,8 @@ const pagesHistory = () => {
     }
 
     function preventDef() {
-        const all = document.querySelectorAll("a");
+        const all = document.querySelectorAll("a[href='#']");
+        console.log(all);
         all.forEach((item) => {
             item.addEventListener("click", (e) => {
                 e.preventDefault();
