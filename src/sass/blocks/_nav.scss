@@ -20,7 +20,7 @@
             text-align: left;
             @include w.hoverBtn {
                 &:hover {
-                    &:after {
+                    &::after {
                         content: "";
                         position: absolute;
                         bottom: -2px;
@@ -71,8 +71,12 @@
                 font-size: 18px;
                 font-weight: 600;
                 line-height: 22px;
-                &::after {
-                    display: none;
+                @include w.hoverBtn {
+                    &:hover {
+                        &::after {
+                            display: none;
+                        }
+                    }
                 }
             }
             .nav__item {
