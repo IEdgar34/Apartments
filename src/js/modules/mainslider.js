@@ -78,7 +78,7 @@ const slider = () => {
     let moveEnd;
     slider.addEventListener("touchstart", touchS, event);
     function touchS(event) {
-        isoWrapper.style.overflow = "hidden";
+        /* isoWrapper.style.overflow = "hidden"; */
         start = event.touches[0].clientX;
     }
     moveEndWrapper.addEventListener("touchend", touchmove, event);
@@ -90,7 +90,7 @@ const slider = () => {
         } else {
             slider.style.transform = `translateX(-${s.size}px)`;
         }
-        isoWrapper.style.overflow = "";
+        /* isoWrapper.style.overflow = ""; */
      
     }
     

@@ -7,7 +7,7 @@ const pagesHistory = () => {
             name: "home",
             title: "Аренда квартир",
             class: "home",
-            content: `<main class="main main__bg" id="del">
+            content: `<main class="main main__bg overflow" id="del">
             <div class="main__content">
             <div class="main__content_title-wrap">
             <h1 class="main__content_title-wrap-title">Аренда квартир в Березниках</h1>
@@ -306,7 +306,7 @@ const pagesHistory = () => {
             removeElements(elementsToRemove("#del"));
             let div = document.createElement("div");
             div.setAttribute("id", "del");
-            div.classList.add(classSelector);
+            div.classList.add(classSelector, "overflow");
             div.innerHTML = addContent;
             wrapper.insertAdjacentElement("afterbegin", div);
             document.querySelector("title").textContent = titleName;
@@ -330,7 +330,6 @@ const pagesHistory = () => {
         let link = document.querySelectorAll(".apart__link");
         link.forEach((item) => {
             item.addEventListener("click", (e) => {
-                menuClose();
                 e.preventDefault();
                 if (history.state.name !== "apartments") {
                     history.pushState(obj.apartments, "", "#apart");
@@ -347,7 +346,6 @@ const pagesHistory = () => {
         let link = document.querySelectorAll(".home__link");
         link.forEach((item) => {
             item.addEventListener("click", (e) => {
-                menuClose();
                 e.preventDefault();
                 if (history.state.name !== "home") {
                     history.pushState(obj.homePage, "", "#home");
@@ -370,18 +368,6 @@ const pagesHistory = () => {
     function elementsToRemove(id) {
         let arr = document.querySelectorAll(id);
         return arr;
-    }
-
-    function menuClose() {
-        if (window.innerWidth <= 1000) {
-            let m = document.querySelector(".header__menu-burger");
-            let n = document.querySelector(".nav");
-            let iosWrap = document.querySelector(".ioswrapper");
-            m.classList.remove("header__menu-burger_active");
-            n.classList.remove("nav_active");
-            document.body.classList.remove("body__overflow");
-            iosWrap.classList.remove("body__overflow");
-        }
     }
 
     function preventDef() {
