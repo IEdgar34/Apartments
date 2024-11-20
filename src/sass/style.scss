@@ -15,6 +15,7 @@
 @use "blocks/message";
 @use "blocks/footer";
 @use "blocks/apartmentsall";
+@use "blocks/details";
 .wrapper {
     /* width: 100vw; */
     min-height: 100%;
@@ -23,8 +24,13 @@
     .section__header {
         flex-shrink: 0;
         width: 100%;
-        position: absolute;
-        top: 25px;
+        padding: 25px 0 12.5px 0;
+        background: linear-gradient(90deg, var(--white) 50%, var(--blue) 50%);
+        @media (min-width: 768px) and (max-width: 1439px) {
+            background: linear-gradient(90deg, var(--white) 30%, var(--blue) 30%);
+        }
+        /*  position: absolute;
+        top: 25px; */
     }
     .section__main {
         flex-grow: 1;
@@ -34,9 +40,7 @@
         flex-shrink: 0;
         width: 100%;
     }
-    
 }
-
 
 /* .ioswrapper {
     overflow: hidden;

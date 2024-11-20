@@ -9,14 +9,14 @@
     &__title {
         padding-bottom: 40px;
     }
-    &__header {
+    /* &__header {
         position: static !important;
         padding: 25px 0 12.5px 0;
         background: linear-gradient(90deg, var(--white) 50%, var(--blue) 50%);
         @media (min-width: 768px) and (max-width: 1439px) {
             background: linear-gradient(90deg, var(--white) 30%, var(--blue) 30%);
         }
-    }
+    } */
     &__cards {
         width: 100%;
         display: grid;
@@ -41,7 +41,7 @@
         }
         @media (max-width: 450px) {
             grid-template-columns: repeat(1, minmax(227px, 249px));
-            grid-template-rows: repeat(1, minmax(317px, 440px));
+            grid-template-rows: repeat(1, minmax(317px, 478px));
             row-gap: 40px;
         }
 

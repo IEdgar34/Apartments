@@ -91,9 +91,8 @@ const slider = () => {
             slider.style.transform = `translateX(-${s.size}px)`;
         }
         /* isoWrapper.style.overflow = ""; */
-     
     }
-    
+
     moveWrapp.addEventListener("touchmove", (e) => {
         moveEnd = e.touches[0].clientX;
         if (s.size <= 0) {
@@ -102,6 +101,5 @@ const slider = () => {
             slider.style.transform = `translateX(-${s.size + -(moveEnd - start)}px)`;
         }
     });
-
 };
 export { slider };
