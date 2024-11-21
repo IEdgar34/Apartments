@@ -45,11 +45,6 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
         });
         this.track.style.transform = `translate3d(-${this.size}px,0px,0px)`;
     };
-    //
-    this.nextBtn.addEventListener("click", this.next);
-    this.prevBtn.addEventListener("click", this.prev);
-    window.addEventListener("resize", this.resize);
-
     this.addActiveClass = () => {
         let borderX = this.border.getBoundingClientRect().x;
         this.itemList.forEach((item) => {
@@ -65,18 +60,23 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
             });
         }, 500);
     };
+    //
+    this.nextBtn.addEventListener("click", this.next);
+    this.prevBtn.addEventListener("click", this.prev);
+    window.addEventListener("resize", this.resize);
 
     this.startFn = (event) => {
         this.start = event.touches[0].clientX;
         console.log("start");
     };
-    /*  this.moveFn = (event) => {
+    this.moveFn = (event) => {
         let move = event.touches[0].clientX;
-        //console.log("move...")
-         console.log(-this.size + -(move - this.start))
-        console.log(`translate3d(${this.size + (move - this.start)}px,0px,0px)`);
-        this.track.style.transform = `translate3d(${this.size + (move - this.start)}px,0px,0px)`;
-    }; */
+        if (this.size === 0) {
+            this.track.style.transform = `translate3d(${this.size + (move - this.start)}px,0px,0px)`;
+        } else {
+            this.track.style.transform = `translate3d(-${this.size + -(move - this.start)}px,0px,0px)`;
+        }
+    };
     this.endFn = (event) => {
         this.end = event.changedTouches[0].clientX;
         console.log(this.end - this.start);
@@ -89,8 +89,7 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
         }
     };
     this.touchE.addEventListener("touchstart", this.startFn, event);
-    /*  this.touchE.addEventListener("touchmove", this.moveFn, event); */
+    this.touchE.addEventListener("touchmove", this.moveFn, event);
     this.touchE.addEventListener("touchend", this.endFn, event);
-    /* this.touchS.addEventListener("touchend", ); */
 }
 export { Slider };
