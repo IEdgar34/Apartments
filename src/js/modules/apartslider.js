@@ -80,9 +80,9 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
     this.endFn = (event) => {
         this.end = event.changedTouches[0].clientX;
         console.log(this.end - this.start);
-        if (this.end - this.start < -100 && this.size < this.maxWidth) {
+        if (this.end - this.start < -50 && this.size < this.maxWidth) {
             this.next();
-        } else if (this.end - this.start > 100 && this.size > this.minWidth) {
+        } else if (this.end - this.start > 50 && this.size > this.minWidth) {
             this.prev();
         } else {
             this.track.style.transform = `translateX(-${this.size}px)`;
