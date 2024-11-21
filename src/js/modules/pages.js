@@ -174,7 +174,7 @@ const pagesHistory = (Slider) => {
                                         </div>
                                         <div class="slider__dots ">
                                             <div class="border">
-                                            <div class="update__slids"> </div>
+                                            <div class="update__slids preview__track"> </div>
                                             </div>
                                         </div>
                                         <div class="slider__next">
@@ -424,11 +424,22 @@ const pagesHistory = (Slider) => {
                     getContent(e.target.getAttribute("id")).then((d) => {
                         if (d) {
                             addContent(d);
+                            const border = document.querySelector(".border");
+                            const track = document.querySelector(".preview__track");
+                            const itemList = document.querySelectorAll(".slider__dots-dot");
+                            const next = document.querySelector(".slider__next");
+                            const prev = document.querySelector(".slider__prev");
+                            //
+                            const touchStart = document.querySelector(".slider__dots-wrapp");
+                            const touchEnd = document.querySelector(".slider__dots ");
+                            let slider = new Slider(border, track, itemList, next, prev,touchStart,touchEnd);
                         } else {
                             console.log("err");
                         }
                     });
                     preventDef();
+
+                    ///
                 }
             });
         });
