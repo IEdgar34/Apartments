@@ -150,9 +150,7 @@
             width: 100%;
             max-height: 419px;
             flex-shrink: 0;
-            
         }
-       
     }
     &__dots-wrapp {
         width: 100%;
@@ -196,9 +194,11 @@
             height: 100%;
             display: flex;
             gap: 7px;
-            transition: transform 0.5s ease-in-out;
+           /*  transition: transform 0.3s ; */
+            /* transition: transform 0.3s ease-in-out; */
             position: relative;
             z-index: 1;
+            will-change: transform;
         }
         @media (max-width: 1130px) {
             height: 76px;
@@ -216,7 +216,8 @@
             border-radius: 10px;
             overflow: hidden;
             transform: scale(0.8);
-            transition: transform 0.4s ease-in-out;
+            transition: transform 0.3s cubic-bezier(0.1, 1.27, 0.58, 1);
+            will-change: transform;
             &_active {
                 transform: scale(1);
             }

@@ -58,7 +58,7 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
                     document.querySelector(".slider__track  img").src = item.querySelector("img").src;
                 }
             });
-        }, 500);
+        }, 300);
     };
     //
     this.nextBtn.addEventListener("click", this.next);
@@ -72,9 +72,9 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
     this.moveFn = (event) => {
         let move = event.touches[0].clientX;
         if (this.size === 0) {
-            this.track.style.transform = `translate3d(${this.size + (move - this.start)}px,0px,0px)`;
+            this.track.style.transform = `translate3d(${this.size + (move - this.start)* 2}px,0px,0px)`;
         } else {
-            this.track.style.transform = `translate3d(-${this.size + -(move - this.start)}px,0px,0px)`;
+            this.track.style.transform = `translate3d(-${this.size + -(move - this.start)* 2}px,0px,0px)`;
         }
     };
     this.endFn = (event) => {
