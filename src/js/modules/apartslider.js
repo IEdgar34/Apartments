@@ -38,7 +38,6 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
         }
     };
     this.resize = () => {
-        alert("resize");
         this.width = this.itemList[0].clientWidth + parseInt(window.getComputedStyle(this.track).columnGap);
         this.maxWidth = this.width * (this.itemList.length - 1);
         this.itemList.forEach((item, counter) => {
@@ -72,7 +71,7 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
         this.start = event.touches[0].clientX;
     };
     this.moveFn = (event) => {
-         removeEventListener("resize", this.resize);
+        removeEventListener("resize", this.resize);
         document.body.classList.add("body__overflow");
         document.querySelector(".ioswrapper").classList.add("body__overflow");
 
@@ -84,7 +83,7 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
         }
     };
     this.endFn = (event) => {
-         window.addEventListener("resize", this.resize);
+        window.addEventListener("resize", this.resize);
         document.body.classList.remove("body__overflow");
         document.querySelector(".ioswrapper").classList.remove("body__overflow");
         this.end = event.changedTouches[0].clientX;
