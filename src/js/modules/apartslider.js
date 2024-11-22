@@ -67,32 +67,32 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
     window.addEventListener("resize", this.resize);
 
     this.startFn = (event) => {
-        console.log("start")
         this.start = event.touches[0].clientX;
     };
     this.moveFn = (event) => {
-        console.log("move")
+        document.body.classList.add("body__overflow");
+        document.querySelector(".ioswrapper").classList.add("body__overflow");
+        console.log("move");
         let move = event.touches[0].clientX;
         if (this.size === 0) {
-            console.log('l')
             this.track.style.transform = `translate3d(${this.size + (move - this.start) * 2}px,0px,0px)`;
         } else {
-            console.log('r')
             this.track.style.transform = `translate3d(-${this.size + -(move - this.start) * 2}px,0px,0px)`;
         }
     };
     this.endFn = (event) => {
-        console.log("end")
+        document.body.classList.remove("body__overflow");
+        document.querySelector(".ioswrapper").classList.remove("body__overflow");
         this.end = event.changedTouches[0].clientX;
         if (this.end - this.start < -50 && this.size < this.maxWidth) {
-           /*  alert("mext") */
+            /*  alert("mext") */
             this.next();
         } else if (this.end - this.start > 50 && this.size > this.minWidth) {
-           /*  alert("prev") */
+            /*  alert("prev") */
             this.prev();
         } else {
             this.track.style.transform = `translateX(-${this.size}px)`;
-           /*  alert("def size") */
+            /*  alert("def size") */
         }
     };
     this.touchS.addEventListener("touchstart", this.startFn, event);
