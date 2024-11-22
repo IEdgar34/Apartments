@@ -68,7 +68,6 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
 
     this.startFn = (event) => {
         this.start = event.touches[0].clientX;
-        console.log("start");
     };
     this.moveFn = (event) => {
         let move = event.touches[0].clientX;
@@ -80,10 +79,11 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
     };
     this.endFn = (event) => {
         this.end = event.changedTouches[0].clientX;
-        console.log(this.end - this.start);
         if (this.end - this.start < -50 && this.size < this.maxWidth) {
+            alert("mext")
             this.next();
         } else if (this.end - this.start > 50 && this.size > this.minWidth) {
+            alert("prev")
             this.prev();
         } else {
             this.track.style.transform = `translateX(-${this.size}px)`;
