@@ -1,4 +1,4 @@
-function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, toucMove, touchEnd) {
+function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, toucMoveEnd) {
     this.border = border;
     this.track = previewTrack;
     this.itemList = sliderItemList;
@@ -6,8 +6,8 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
     this.prevBtn = prev;
     //
     this.touchS = touchStart;
-    this.touchm = toucMove;
-    this.touchE = touchEnd;
+    this.touchmE = toucMoveEnd;
+    /* this.touchE = touchEnd; */
     //
     this.width = this.itemList[0].clientWidth + parseInt(window.getComputedStyle(this.track).columnGap);
     this.maxWidth = this.width * (this.itemList.length - 1);
@@ -67,9 +67,11 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
     window.addEventListener("resize", this.resize);
 
     this.startFn = (event) => {
+        console.log("start")
         this.start = event.touches[0].clientX;
     };
     this.moveFn = (event) => {
+        console.log("move")
         let move = event.touches[0].clientX;
         if (this.size === 0) {
             this.track.style.transform = `translate3d(${this.size + (move - this.start) * 2}px,0px,0px)`;
@@ -78,20 +80,21 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
         }
     };
     this.endFn = (event) => {
+        console.log("end")
         this.end = event.changedTouches[0].clientX;
         if (this.end - this.start < -50 && this.size < this.maxWidth) {
-            alert("mext")
+           /*  alert("mext") */
             this.next();
         } else if (this.end - this.start > 50 && this.size > this.minWidth) {
-            alert("prev")
+           /*  alert("prev") */
             this.prev();
         } else {
             this.track.style.transform = `translateX(-${this.size}px)`;
-            alert("def size")
+           /*  alert("def size") */
         }
     };
     this.touchS.addEventListener("touchstart", this.startFn, event);
-    this.touchE.addEventListener("touchmove", this.moveFn, event);
-    this.touchm.addEventListener("touchend", this.endFn, event);
+    this.touchmE.addEventListener("touchmove", this.moveFn, event);
+    this.touchmE.addEventListener("touchend", this.endFn, event);
 }
 export { Slider };
