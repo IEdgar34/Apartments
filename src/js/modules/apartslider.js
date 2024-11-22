@@ -1,4 +1,4 @@
-function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, touchEnd /* , touchMove */) {
+function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, toucMove, touchEnd) {
     this.border = border;
     this.track = previewTrack;
     this.itemList = sliderItemList;
@@ -6,6 +6,7 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
     this.prevBtn = prev;
     //
     this.touchS = touchStart;
+    this.touchm = toucMove;
     this.touchE = touchEnd;
     //
     this.width = this.itemList[0].clientWidth + parseInt(window.getComputedStyle(this.track).columnGap);
@@ -72,9 +73,9 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
     this.moveFn = (event) => {
         let move = event.touches[0].clientX;
         if (this.size === 0) {
-            this.track.style.transform = `translate3d(${this.size + (move - this.start)* 2}px,0px,0px)`;
+            this.track.style.transform = `translate3d(${this.size + (move - this.start) * 2}px,0px,0px)`;
         } else {
-            this.track.style.transform = `translate3d(-${this.size + -(move - this.start)* 2}px,0px,0px)`;
+            this.track.style.transform = `translate3d(-${this.size + -(move - this.start) * 2}px,0px,0px)`;
         }
     };
     this.endFn = (event) => {
@@ -90,6 +91,6 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
     };
     this.touchS.addEventListener("touchstart", this.startFn, event);
     this.touchE.addEventListener("touchmove", this.moveFn, event);
-    this.touchE.addEventListener("touchend", this.endFn, event);
+    this.touchm.addEventListener("touchend", this.endFn, event);
 }
 export { Slider };

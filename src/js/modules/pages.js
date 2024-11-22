@@ -440,8 +440,8 @@ const pagesHistory = (Slider) => {
                             const prev = document.querySelector(".slider__prev");
                             //
                             const touchStart = document.querySelector(".slider__dots-wrapp");
-                            const touchEnd = document.querySelector(".slider__dots ");
-                            let slider = new Slider(border, track, itemList, next, prev, touchStart, touchEnd);
+                            const touchMove = document.querySelector(".slider__dots ");
+                            let slider = new Slider(border, track, itemList, next, prev, touchStart, touchMove,track);
                         } else {
                             console.log("err");
                         }
