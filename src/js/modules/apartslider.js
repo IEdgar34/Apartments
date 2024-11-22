@@ -37,6 +37,7 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
         }
     };
     this.resize = () => {
+        alert("resize")
         this.width = this.itemList[0].clientWidth + parseInt(window.getComputedStyle(this.track).columnGap);
         this.maxWidth = this.width * (this.itemList.length - 1);
         this.itemList.forEach((item, counter) => {
