@@ -72,7 +72,7 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
     this.moveFn = (event) => {
         document.body.classList.add("body__overflow");
         document.querySelector(".ioswrapper").classList.add("body__overflow");
-        console.log("move");
+       
         let move = event.touches[0].clientX;
         if (this.size === 0) {
             this.track.style.transform = `translate3d(${this.size + (move - this.start) * 2}px,0px,0px)`;
@@ -85,14 +85,14 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
         document.querySelector(".ioswrapper").classList.remove("body__overflow");
         this.end = event.changedTouches[0].clientX;
         if (this.end - this.start < -50 && this.size < this.maxWidth) {
-            /*  alert("mext") */
+            
             this.next();
         } else if (this.end - this.start > 50 && this.size > this.minWidth) {
-            /*  alert("prev") */
+           
             this.prev();
         } else {
             this.track.style.transform = `translateX(-${this.size}px)`;
-            /*  alert("def size") */
+          
         }
     };
     this.touchS.addEventListener("touchstart", this.startFn, event);
