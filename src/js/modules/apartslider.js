@@ -74,8 +74,10 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
         console.log("move")
         let move = event.touches[0].clientX;
         if (this.size === 0) {
+            console.log('l')
             this.track.style.transform = `translate3d(${this.size + (move - this.start) * 2}px,0px,0px)`;
         } else {
+            console.log('r')
             this.track.style.transform = `translate3d(-${this.size + -(move - this.start) * 2}px,0px,0px)`;
         }
     };
