@@ -88,7 +88,7 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
             this.track.style.transform = `translateX(-${this.size}px)`;
         }
     };
-    this.touchE.addEventListener("touchstart", this.startFn, event);
+    this.touchS.addEventListener("touchstart", this.startFn, event);
     this.touchE.addEventListener("touchmove", this.moveFn, event);
     this.touchE.addEventListener("touchend", this.endFn, event);
 }
