@@ -13,14 +13,10 @@ const menu = () => {
     });
     menuBtn.addEventListener("click", navTogle);
     function navTogle() {
-        let e = document.querySelectorAll(".overflow");
-        document.documentElement.style.setProperty(
-            "--pr",
-            window.innerWidth - document.documentElement.clientWidth + "px"
-        );
-        e.forEach((item) => {
-            item.classList.toggle("pr");
-        });
+        document
+            .querySelector(":root")
+            .style.setProperty("--pr", window.innerWidth - document.documentElement.clientWidth + "px");
+
         menuBtn.classList.toggle("header__menu-burger_active");
         nav.classList.toggle("nav_active");
         document.body.classList.toggle("body__overflow");

@@ -3,6 +3,7 @@
     //max-height: 1880px;
     padding-top: 68px;
     padding-bottom: 120px;
+    padding-right: var(--pr);
     @media (max-width: 850px) {
        padding-bottom: 60px;
     }

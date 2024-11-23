@@ -16,6 +16,7 @@
 @use "blocks/footer";
 @use "blocks/apartmentsall";
 @use "blocks/details";
+@use "blocks/notification";
 .wrapper {
     /* width: 100vw; */
     min-height: 100%;
@@ -25,6 +26,7 @@
         flex-shrink: 0;
         width: 100%;
         padding: 25px 0 12.5px 0;
+        padding-right: var(--pr);
         background: linear-gradient(90deg, var(--white) 50%, var(--blue) 50%);
         @media (min-width: 768px) and (max-width: 1439px) {
             background: linear-gradient(90deg, var(--white) 30%, var(--blue) 30%);

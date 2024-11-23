@@ -20,9 +20,7 @@ body {
 .body__overflow {
     overflow: hidden;
 }
-:root {
-    --pr: 0px;
-}
+
 .pr {
     padding-right: var(--pr) !important;
 }

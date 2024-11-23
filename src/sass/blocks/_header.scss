@@ -1,5 +1,6 @@
 @use "mixins/mixins" as w;
 .main__bg {
+    padding-right: var(--pr);
     background: linear-gradient(90deg, var(--white) 50%, var(--blue) 50%);
     @media (min-width: 768px) and (max-width: 1439px) {
         background: linear-gradient(90deg, var(--white) 30%, var(--blue) 30%);
