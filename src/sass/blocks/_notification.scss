@@ -1,11 +1,11 @@
 .notification {
-    max-width: max-content;
+    max-width: 300px;
     min-width: 250px;
-    height: 80px;
+    min-height: 80px;
     border: 2px solid var(--bg);
     border-radius: 10px;
-    backdrop-filter: blur(4px);
-    padding: 0 5px 3px 5px;
+    backdrop-filter: blur(10px);
+    padding: 0 10px 3px 10px;
     position: fixed;
     right: 10px;
     bottom: 20px;
@@ -13,10 +13,12 @@
     transform: translateX(var(--transform));
     transition: transform 0.6s;
     will-change: transform;
+    word-wrap: break-word;
     &__message {
-        font-size: 16px;
-        color: black;
-        font-weight: 600;
+        font-size: 18px;
+        color: rgb(0, 0, 0);
+        font-weight: 400;
+        line-height: 20px;
     }
     &__svg {
         width: 40px;

@@ -137,7 +137,8 @@
 
 .slider {
     width: 100%;
-    max-height: 419px;
+    min-height: 419px;
+    /* height: 419px; */
     border-radius: 10px;
     overflow: hidden;
     &__track {
@@ -145,11 +146,12 @@
         height: 100%;
         display: flex;
         img {
-            flex-shrink: 0;
+            /* flex-shrink: 0; */
             display: block;
             width: 100%;
-            max-height: 419px;
-            flex-shrink: 0;
+            height: 100%;
+           /*  max-height: 419px; */
+           
         }
     }
     &__dots-wrapp {

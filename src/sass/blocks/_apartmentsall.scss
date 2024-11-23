@@ -51,7 +51,7 @@
             &-img {
                 display: block;
                 width: 100%;
-                min-height: 140px;
+                max-height: 246px;
                 border-radius: 10px;
                 margin-bottom: 20px;
                 @media (max-width: 850px) {

@@ -5,6 +5,7 @@ import { pagesHistory } from "./modules/pages";
 import { animation } from "./modules/animation";
 import { Slider } from "./modules/apartslider";
 import { sendForm } from "./modules/sendform";
+import { scrollview } from "./modules/scrollview";
 
 window.addEventListener("DOMContentLoaded", () => {
     slider();
@@ -12,4 +13,7 @@ window.addEventListener("DOMContentLoaded", () => {
     pagesHistory(Slider);
     animation();
     sendForm();
+    scrollview();
+
+    
 });

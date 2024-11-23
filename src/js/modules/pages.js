@@ -58,7 +58,7 @@ const pagesHistory = (Slider) => {
                         <ul class="apartments__cards">
                         <li class="apartments__card">
                         <figure>
-                        <img src="images/apart1-min.webp" alt="" loading="lazy" />
+                        <img src="images/1/apart1_1_11zon.webp" alt="" loading="lazy" />
                         </figure>
                         <div class="apartments__card_descr">
                         <h3 class="apartments__card_descr-title">Однокомнатная квартира</h3>
@@ -77,7 +77,7 @@ const pagesHistory = (Slider) => {
                         </li>
                         <li class="apartments__card">
                         <figure>
-                        <img src="images/apart2-min.webp" alt="" loading="lazy" />
+                        <img src="images/2/apart2_1_11zon.webp" alt="" loading="lazy" />
                         </figure>
                         <div class="apartments__card_descr">
                         <h3 class="apartments__card_descr-title">Трёхкомнатная квартира</h3>
@@ -96,7 +96,7 @@ const pagesHistory = (Slider) => {
                         </li>
                         <li class="apartments__card">
                         <figure>
-                        <img src="images/apart3-min.webp" alt="" loading="lazy" />
+                        <img src="images/3/apart3_1_11zon.webp" alt="" loading="lazy" />
                         </figure>
                         <div class="apartments__card_descr">
                         <h3 class="apartments__card_descr-title">Двухкомнатная квартира</h3>
@@ -115,7 +115,7 @@ const pagesHistory = (Slider) => {
                         </li>
                         <li class="apartments__card">
                         <figure>
-                        <img src="images/apart4-min.webp" alt="" loading="lazy" />
+                        <img src="images/4/apart4_1_11zon.webp" alt="" loading="lazy" />
                         </figure>
                         <div class="apartments__card_descr">
                         <h3 class="apartments__card_descr-title">Пятикомнатная квартира</h3>
@@ -233,63 +233,65 @@ const pagesHistory = (Slider) => {
                         <h1 class="title apartmentsall__title">Наши квартиры</h1>
                         <ul class="apartmentsall__cards">
                         <li class="apartmentsall__cards_card">
-                        <img src="images/apartall-min.webp" alt="" class="apartmentsall__cards_card-img" />
+                        <img src="images/1/apart1_1_11zon.webp" alt="" class="apartmentsall__cards_card-img" />
                         <h1 class="apartmentsall__cards_card-title">Однокомнатная квартира</h1>
                         <p class="apartmentsall__cards_card-descr">
                         СДАМ 1- ую квартиру улучшенной планировки с лоджией, есть всё необходимое спальные
                         места кровать 2...
                         </p>
-                        <p class="apartmentsall__cards_card-price">1 200 ₽ за сутки</p>
+                        <p class="apartmentsall__cards_card-price">1 500 ₽ за сутки</p>
                         <p class="apartmentsall__cards_card-address">
                         <img src="icons/target.svg" alt="" class="apartmentsall__cards_card-icon" />
                         <span>Березники, ул. Юбилейная 108</span>
                         </p>
                         <a href="#" class="button apartmentsall__cards_card-btn" id="apart1">Подробнее</a>
                         </li>
+                       
                         <li class="apartmentsall__cards_card ">
-                        <img src="images/apartall1-min.webp" alt="" class="apartmentsall__cards_card-img" />
+                        <img src="images/2/apart2_1_11zon.webp" alt="" class="apartmentsall__cards_card-img" />
                         <h1 class="apartmentsall__cards_card-title">Однокомнатная квартира</h1>
                         <p class="apartmentsall__cards_card-descr">
-                        СДАМ 1- ую квартиру улучшенной планировки с лоджией, есть всё необходимое спальные
-                        места кровать 2...
+                        Сдам 1- квартиру с балконом есть всё необходимое для проживания выписываю ДОКУМЕНТЫ ЧЕК ОНЛАЙН 25+звонить...
                         </p>
                         <p class="apartmentsall__cards_card-price">1 200 ₽ за сутки</p>
                         <p class="apartmentsall__cards_card-address">
                         <img src="icons/target.svg" alt="" class="apartmentsall__cards_card-icon" />
-                        <span>Березники, ул. Юбилейная 108</span>
+                        <span>Березники, ул. Гагарина 89</span>
                         </p>
                         <a href="#" class="button apartmentsall__cards_card-btn" id="apart2">Подробнее</a>
                         </li>
+                       
                         <li class="apartmentsall__cards_card">
-                        <img src="images/apartall3-min.webp" alt="" class="apartmentsall__cards_card-img" />
-                        <h1 class="apartmentsall__cards_card-title">Однокомнатная квартира</h1>
+                        <img src="images/3/apart3_1_11zon.webp" alt="" class="apartmentsall__cards_card-img" />
+                        <h1 class="apartmentsall__cards_card-title">Двухкомнатная квартира</h1>
                         <p class="apartmentsall__cards_card-descr">
-                        СДАМ 1- ую квартиру улучшенной планировки с лоджией, есть всё необходимое спальные
-                        места кровать 2...
+                        СДАМ 2 КОМНАТНУЮ КВАРТИРУ есть балкон всё необходимое для комфортного проживания, холодильник, мик.печь...
                         </p>
-                        <p class="apartmentsall__cards_card-price">1 200 ₽ за сутки</p>
+                        <p class="apartmentsall__cards_card-price">1 700 ₽ за сутки</p>
                         <p class="apartmentsall__cards_card-address">
                         <img src="icons/target.svg" alt="" class="apartmentsall__cards_card-icon" />
-                        <span>Березники, ул. Юбилейная 108</span>
+                        <span>Березники, ул. Власова 14</span>
                         </p>
                         <a href="#" class="button apartmentsall__cards_card-btn" id="apart3">Подробнее</a>
                         </li>
+                     
                         <li class="apartmentsall__cards_card">
-                        <img src="images/apartall4-min.webp" alt="" class="apartmentsall__cards_card-img" />
-                        <h1 class="apartmentsall__cards_card-title">Однокомнатная квартира</h1>
+                        <img src="images/4/apart4_1_11zon.webp" alt="" class="apartmentsall__cards_card-img" />
+                        <h1 class="apartmentsall__cards_card-title">Пятикомнатная квартира</h1>
                         <p class="apartmentsall__cards_card-descr">
-                        СДАМ 1- ую квартиру улучшенной планировки с лоджией, есть всё необходимое спальные
+                        СДАМ 5- ую квартиру улучшенной планировки с лоджией, есть всё необходимое спальные
                         места кровать 2...
                         </p>
-                        <p class="apartmentsall__cards_card-price">1 200 ₽ за сутки</p>
+                        <p class="apartmentsall__cards_card-price">4 100₽ за сутки</p>
                         <p class="apartmentsall__cards_card-address">
                         <img src="icons/target.svg" alt="" class="apartmentsall__cards_card-icon" />
-                        <span>Березники, ул. Юбилейная 108</span>
+                        <span>Березники, ул. Шмидта 10</span>
                         </p>
                         <a href="#" class="button apartmentsall__cards_card-btn" id="apart4">Подробнее</a>
                         </li>
+                       
                         <li class="apartmentsall__cards_card">
-                        <img src="images/apartall5-min.webp" alt="" class="apartmentsall__cards_card-img" />
+                        <img src="images/5/apart5_1_11zon.webp" alt="" class="apartmentsall__cards_card-img" />
                         <h1 class="apartmentsall__cards_card-title">Однокомнатная квартира</h1>
                         <p class="apartmentsall__cards_card-descr">
                         СДАМ 1- ую квартиру улучшенной планировки с лоджией, есть всё необходимое спальные
@@ -302,8 +304,9 @@ const pagesHistory = (Slider) => {
                         </p>
                         <a href="#" class="button apartmentsall__cards_card-btn" id="apart5">Подробнее</a>
                         </li>
+                        
                         <li class="apartmentsall__cards_card ">
-                        <img src="images/apartall6-min.webp" alt="" class="apartmentsall__cards_card-img" />
+                        <img src="images/6/apart6_1_11zon.webp" alt="" class="apartmentsall__cards_card-img" />
                         <h1 class="apartmentsall__cards_card-title">Однокомнатная квартира</h1>
                         <p class="apartmentsall__cards_card-descr">
                         СДАМ 1- ую квартиру улучшенной планировки с лоджией, есть всё необходимое спальные
@@ -316,8 +319,9 @@ const pagesHistory = (Slider) => {
                         </p>
                         <a href="#" class="button apartmentsall__cards_card-btn" id="apart6">Подробнее</a>
                         </li>
+                        
                         <li class="apartmentsall__cards_card ">
-                        <img src="images/apartall7-min.webp" alt="" class="apartmentsall__cards_card-img" />
+                        <img src="images/7/apart7_1_11zon.webp" alt="" class="apartmentsall__cards_card-img" />
                         <h1 class="apartmentsall__cards_card-title">Однокомнатная квартира</h1>
                         <p class="apartmentsall__cards_card-descr">
                         СДАМ 1- ую квартиру улучшенной планировки с лоджией, есть всё необходимое спальные
@@ -441,7 +445,7 @@ const pagesHistory = (Slider) => {
                             //
                             const touchStart = document.querySelector(".slider__dots-wrapp");
                             const touchEnd = document.querySelector(".slider__dots ");
-                            let slider = new Slider(border, track, itemList, next, prev,touchStart,touchEnd);
+                            let slider = new Slider(border, track, itemList, next, prev, touchStart, touchEnd);
                         } else {
                             console.log("err");
                         }
@@ -525,9 +529,10 @@ const pagesHistory = (Slider) => {
             for (let c = 0; c < data.imageurl.length; c++) {
                 let img = document.createElement("img");
                 img.src = data.imageurl[c];
-                if (i === 0) {
+                if (i === 0 && c === 0) {
+                    console.log(slids[i]);
                     slids[i].append(img);
-                } else {
+                } else if (i > 0) {
                     let div = document.createElement("div");
                     div.classList.add("slider__dots-dot");
                     div.append(img);
