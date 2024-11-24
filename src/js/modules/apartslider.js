@@ -98,5 +98,6 @@ function Slider(border, previewTrack, sliderItemList, next, prev, touchStart, to
     this.touchS.addEventListener("touchstart", this.startFn, event);
     this.touchmE.addEventListener("touchmove", this.moveFn, event);
     this.touchmE.addEventListener("touchend", this.endFn, event);
+    //
 }
 export { Slider };

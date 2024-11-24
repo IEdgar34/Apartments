@@ -1,3 +1,4 @@
+@use "mixins/mixins" as w;
 .apartmentsall {
     width: 100%;
     //max-height: 1880px;
@@ -5,7 +6,7 @@
     padding-bottom: 120px;
     padding-right: var(--pr);
     @media (max-width: 850px) {
-       padding-bottom: 60px;
+        padding-bottom: 60px;
     }
     &__title {
         padding-bottom: 40px;
@@ -47,11 +48,11 @@
         }
 
         &_card {
-            //box-shadow: 4px 4px 4px 4px black;
             &-img {
                 display: block;
                 width: 100%;
-                max-height: 246px;
+                $h: calc(267 / (1280 / 100));
+                height: clamp(140px, #{$h}vw, 267px);
                 border-radius: 10px;
                 margin-bottom: 20px;
                 @media (max-width: 850px) {

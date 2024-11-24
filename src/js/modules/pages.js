@@ -71,7 +71,7 @@ const pagesHistory = (Slider) => {
                         >Березники, ул. Юбилейная 108</span
                         >
                         </div>
-                        <button class="button apartments__card_descr-btn">Подробнее</button>
+                        <button class="button apartments__card_descr-btn more" id="apart1">Подробнее</button>
                         </div>
                         </div>
                         </li>
@@ -90,7 +90,7 @@ const pagesHistory = (Slider) => {
                         >Березники, ул. Гагарина 89</span
                         >
                         </div>
-                        <button class="button apartments__card_descr-btn">Подробнее</button>
+                        <button class="button apartments__card_descr-btn more" id="apart2">Подробнее</button>
                         </div>
                         </div>
                         </li>
@@ -109,7 +109,7 @@ const pagesHistory = (Slider) => {
                         >Березники, ул. Власова 14</span
                         >
                         </div>
-                        <button class="button apartments__card_descr-btn">Подробнее</button>
+                        <button class="button apartments__card_descr-btn more" id="apart3">Подробнее</button>
                         </div>
                         </div>
                         </li>
@@ -128,7 +128,7 @@ const pagesHistory = (Slider) => {
                         >Березники, ул. Шмидта 10</span
                         >
                         </div>
-                        <button class="button apartments__card_descr-btn">Подробнее</button>
+                        <button class="button apartments__card_descr-btn more" id="apart4">Подробнее</button>
                         </div>
                         </div>
                         </li>
@@ -244,7 +244,7 @@ const pagesHistory = (Slider) => {
                         <img src="icons/target.svg" alt="" class="apartmentsall__cards_card-icon" />
                         <span>Березники, ул. Юбилейная 108</span>
                         </p>
-                        <a href="#" class="button apartmentsall__cards_card-btn" id="apart1">Подробнее</a>
+                        <a href="#" class="button apartmentsall__cards_card-btn more" id="apart1">Подробнее</a>
                         </li>
                        
                         <li class="apartmentsall__cards_card ">
@@ -258,7 +258,7 @@ const pagesHistory = (Slider) => {
                         <img src="icons/target.svg" alt="" class="apartmentsall__cards_card-icon" />
                         <span>Березники, ул. Гагарина 89</span>
                         </p>
-                        <a href="#" class="button apartmentsall__cards_card-btn" id="apart2">Подробнее</a>
+                        <a href="#" class="button apartmentsall__cards_card-btn more" id="apart2">Подробнее</a>
                         </li>
                        
                         <li class="apartmentsall__cards_card">
@@ -272,7 +272,7 @@ const pagesHistory = (Slider) => {
                         <img src="icons/target.svg" alt="" class="apartmentsall__cards_card-icon" />
                         <span>Березники, ул. Власова 14</span>
                         </p>
-                        <a href="#" class="button apartmentsall__cards_card-btn" id="apart3">Подробнее</a>
+                        <a href="#" class="button apartmentsall__cards_card-btn more" id="apart3">Подробнее</a>
                         </li>
                      
                         <li class="apartmentsall__cards_card">
@@ -287,7 +287,7 @@ const pagesHistory = (Slider) => {
                         <img src="icons/target.svg" alt="" class="apartmentsall__cards_card-icon" />
                         <span>Березники, ул. Шмидта 10</span>
                         </p>
-                        <a href="#" class="button apartmentsall__cards_card-btn" id="apart4">Подробнее</a>
+                        <a href="#" class="button apartmentsall__cards_card-btn more" id="apart4">Подробнее</a>
                         </li>
                        
                         <li class="apartmentsall__cards_card">
@@ -302,7 +302,7 @@ const pagesHistory = (Slider) => {
                         <img src="icons/target.svg" alt="" class="apartmentsall__cards_card-icon" />
                         <span>Березники, ул. Юбилейная 108</span>
                         </p>
-                        <a href="#" class="button apartmentsall__cards_card-btn" id="apart5">Подробнее</a>
+                        <a href="#" class="button apartmentsall__cards_card-btn more" id="apart5">Подробнее</a>
                         </li>
                         
                         <li class="apartmentsall__cards_card ">
@@ -317,7 +317,7 @@ const pagesHistory = (Slider) => {
                         <img src="icons/target.svg" alt="" class="apartmentsall__cards_card-icon" />
                         <span>Березники, ул. Юбилейная 108</span>
                         </p>
-                        <a href="#" class="button apartmentsall__cards_card-btn" id="apart6">Подробнее</a>
+                        <a href="#" class="button apartmentsall__cards_card-btn more" id="apart6">Подробнее</a>
                         </li>
                         
                         <li class="apartmentsall__cards_card ">
@@ -332,7 +332,7 @@ const pagesHistory = (Slider) => {
                         <img src="icons/target.svg" alt="" class="apartmentsall__cards_card-icon" />
                         <span>Березники, ул. Юбилейная 108</span>
                         </p>
-                        <a href="#" class="button apartmentsall__cards_card-btn" id="apart7">Подробнее</a>
+                        <a href="#" class="button apartmentsall__cards_card-btn more" id="apart7">Подробнее</a>
                         </li>
                         </ul>
                         </div>`,
@@ -345,6 +345,7 @@ const pagesHistory = (Slider) => {
         home(classSelector, addContent, titleName) {
             this.displayContent(classSelector, addContent, titleName);
             apartBtn();
+            detailsBtn();
         },
         apartments(classSelector, addContent, titleName) {
             this.displayContent(classSelector, addContent, titleName);
@@ -425,7 +426,7 @@ const pagesHistory = (Slider) => {
     }
     homeBtn();
     function detailsBtn() {
-        const link = document.querySelectorAll(".apartmentsall__cards_card-btn");
+        const link = document.querySelectorAll(".more");
         link.forEach((item) => {
             item.addEventListener("click", (e) => {
                 e.preventDefault();
