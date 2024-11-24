@@ -1,0 +1,97 @@
+@use "mixins/mixins" as w;
+.overlay {
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(40px) opacity(100%);
+    position: fixed;
+    z-index: 2000;
+    display: none;
+    &_active {
+        display: block;
+    }
+}
+.modal {
+    $width: calc(450 / (1280 / 100));
+    width: clamp(260px, #{$width}vw, 450px);
+    height: clamp(270px, #{$width}vw, 450px);
+    padding: 60px 65px 83px 65px;
+    border-radius: 10px;
+    box-shadow: 0px -5px 20px 0px rgba(0, 0, 0, 0.2);
+    background: rgb(255, 255, 255);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @media (max-width: 1200px) {
+        padding: 35px 40px;
+    }
+    @media(max-width: 940px){
+        padding: 25px 25px;
+        
+    }
+    &__close {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        font-size: 70px;
+        font-weight: 100;
+        line-height: 0.5;
+        cursor: pointer;
+        @media(max-width: 768px){
+            width: 20px;
+            height: 20px;
+            font-size: 50px;
+        }
+    }
+    &__title {
+        margin-bottom: 10px;
+        font-weight: 700;
+        text-align: center;
+    }
+    &__descr {
+        text-align: center;
+        margin-bottom: 30px;
+        color: rgb(51, 51, 51);
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 22px;
+        @media(max-width: 940px){
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        @media(max-width: 798px){
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+    }
+
+    &__inputs {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 30px;
+        input{
+            @media(max-width: 960px){
+                height: 30px;
+            }
+        }
+        @media(max-width: 810px){
+            margin-bottom: 10px;
+        }
+    }
+    &__btn {
+        display: block;
+        @media (max-width: 990px) {
+            height: 36px;
+        }
+        &_nav {
+            @media (min-width: 480px) {
+                display: none;
+            }
+        }
+    }
+    
+}

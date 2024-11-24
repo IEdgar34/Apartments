@@ -9,7 +9,7 @@
     position: fixed;
     right: 10px;
     bottom: 20px;
-    z-index: 1000;
+    z-index: 3000;
     transform: translateX(var(--transform));
     transition: transform 0.6s;
     will-change: transform;

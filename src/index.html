@@ -48,6 +48,9 @@
                                 <li class="nav__item">
                                     <a href="#" class="nav__list-item_link about__link">О нас</a>
                                 </li>
+                                <li class="nav__item modal__btn_nav">
+                                    <a href="#" class="nav__list-item_link modal_openbtn">Заказать звонок</a>
+                                </li>
                             </ul>
                         </nav>
                         <div class="info">
@@ -63,7 +66,7 @@
                                 </a>
                                 <a href="tel:+79197142500">+7 (919) 714-25-00</a>
                             </div>
-                            <a href="#" class="button info__btn">Заказать звонок</a>
+                            <a href="#" class="button info__btn modal_openbtn">Заказать звонок</a>
                         </div>
                     </header>
                 </div>
@@ -133,7 +136,9 @@
                                                     >Березники, ул. Юбилейная 108</span
                                                 >
                                             </div>
-                                            <button class="button apartments__card_descr-btn more" id="apart1">Подробнее</button>
+                                            <button class="button apartments__card_descr-btn more" id="apart1">
+                                                Подробнее
+                                            </button>
                                         </div>
                                     </div>
                                 </li>
@@ -152,7 +157,9 @@
                                                     >Березники, ул. Гагарина 89</span
                                                 >
                                             </div>
-                                            <button class="button apartments__card_descr-btn more" id="apart2">Подробнее</button>
+                                            <button class="button apartments__card_descr-btn more" id="apart2">
+                                                Подробнее
+                                            </button>
                                         </div>
                                     </div>
                                 </li>
@@ -171,7 +178,9 @@
                                                     >Березники, ул. Власова 14</span
                                                 >
                                             </div>
-                                            <button class="button apartments__card_descr-btn more" id="apart3">Подробнее</button>
+                                            <button class="button apartments__card_descr-btn more" id="apart3">
+                                                Подробнее
+                                            </button>
                                         </div>
                                     </div>
                                 </li>
@@ -190,7 +199,9 @@
                                                     >Березники, ул. Шмидта 10</span
                                                 >
                                             </div>
-                                            <button class="button apartments__card_descr-btn more" id="apart4">Подробнее</button>
+                                            <button class="button apartments__card_descr-btn more" id="apart4">
+                                                Подробнее
+                                            </button>
                                         </div>
                                     </div>
                                 </li>
@@ -252,7 +263,7 @@
                                 </ul>
                             </div>
                             <div class="contacts__map">
-                               <!--  <iframe
+                                <iframe
                                     src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d35372.18444996205!2d44.7741393689543!3d48.780871945318516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1731603264849!5m2!1sru!2sru"
                                     width="600"
                                     height="450"
@@ -261,7 +272,7 @@
                                     loading="lazy"
                                     referrerpolicy="no-referrer-when-downgrade"
                                     title="Google Map"
-                                ></iframe> -->
+                                ></iframe>
                                 <!--  <iframe
                                         src="https://yandex.ru/map-widget/v1/?um=constructor%3Afa5938caa44d8742bfee8a5d6ec1265c2239219451c0ecc686563b093f543dae&amp;source=constructor"
                                     ></iframe> -->
@@ -375,7 +386,7 @@
                             <h2>Татьяна Вячеславовна</h2>
                             <h3>Директор гостиницы</h3>
                         </div>
-                        <form class="message__form">
+                        <form class="message__form" id="message">
                             <h1 class="message__form_title">Напишите нам</h1>
                             <input placeholder="Имя" type="text " name="name" required class="message__form_inp" />
                             <input placeholder="Email" type="email" name="Email" required class="message__form_inp" />
@@ -450,6 +461,34 @@
                     <img src="icons/succes.svg" alt="" />
                 </div>
                 <p class="notification__message"></p>
+            </div>
+            <div class="overlay">
+                <div class="modal">
+                    <div class="modal__close">&times;</div>
+                    <h1 class="modal__title title">Заказать звонок</h1>
+                    <p class="modal__descr">Оставьте заявку и мы свяжемся с Вами в ближайшее время!</p>
+                    <form action="#" class="modal__form" id="collback">
+                        <div class="modal__inputs">
+                            <input
+                                type="text"
+                                placeholder="Имя"
+                                required
+                                name="name"
+                                autocomplete="additional-name"
+                                class="message__form_inp"
+                            />
+                            <input
+                                type="text"
+                                placeholder="Телефон"
+                                required
+                                name="tel"
+                                autocomplete="tel"
+                                class="message__form_inp"
+                            />
+                        </div>
+                        <button type="submit" class="modal__btn message__form_btn">Отправить</button>
+                    </form>
+                </div>
             </div>
         </div>
 
