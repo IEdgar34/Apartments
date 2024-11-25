@@ -12,8 +12,8 @@
 }
 .modal {
     $width: calc(450 / (1280 / 100));
-    width: clamp(260px, #{$width}vw, 450px);
-    height: clamp(270px, #{$width}vw, 450px);
+    width: clamp(300px, #{$width}vw, 450px);
+    height: clamp(350px, #{$width}vw, 450px);
     padding: 60px 65px 83px 65px;
     border-radius: 10px;
     box-shadow: 0px -5px 20px 0px rgba(0, 0, 0, 0.2);
@@ -25,9 +25,8 @@
     @media (max-width: 1200px) {
         padding: 35px 40px;
     }
-    @media(max-width: 940px){
+    @media (max-width: 940px) {
         padding: 25px 25px;
-        
     }
     &__close {
         width: 30px;
@@ -39,14 +38,13 @@
         font-weight: 100;
         line-height: 0.5;
         cursor: pointer;
-        @media(max-width: 768px){
+        @media (max-width: 768px) {
             width: 20px;
             height: 20px;
             font-size: 50px;
         }
     }
     &__title {
-        margin-bottom: 10px;
         font-weight: 700;
         text-align: center;
     }
@@ -57,13 +55,11 @@
         font-size: 18px;
         font-weight: 400;
         line-height: 22px;
-        @media(max-width: 940px){
+        @media (max-width: 940px) {
             font-size: 16px;
-            margin-bottom: 10px;
         }
-        @media(max-width: 798px){
+        @media (max-width: 798px) {
             font-size: 14px;
-            margin-bottom: 5px;
         }
     }
 
@@ -73,19 +69,22 @@
         flex-direction: column;
         gap: 15px;
         margin-bottom: 30px;
-        input{
-            @media(max-width: 960px){
+        input {
+            @media (max-width: 960px) {
                 height: 30px;
             }
         }
-        @media(max-width: 810px){
-            margin-bottom: 10px;
+        @media (max-width: 940px) {
+            margin-bottom: 70px;
+        }
+        div {
+            position: relative;
         }
     }
     &__btn {
         display: block;
+        height: 36px;
         @media (max-width: 990px) {
-            height: 36px;
         }
         &_nav {
             @media (min-width: 480px) {
@@ -93,5 +92,4 @@
             }
         }
     }
-    
 }

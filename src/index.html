@@ -386,11 +386,37 @@
                             <h2>Татьяна Вячеславовна</h2>
                             <h3>Директор гостиницы</h3>
                         </div>
-                        <form class="message__form" id="message">
+                        <form novalidate class="message__form" id="message">
                             <h1 class="message__form_title">Напишите нам</h1>
-                            <input placeholder="Имя" type="text " name="name" required class="message__form_inp" />
-                            <input placeholder="Email" type="email" name="Email" required class="message__form_inp" />
-                            <textarea placeholder="Ваше сообщение" name="textarea" class="message__form_inp"></textarea>
+                            <div>
+                                <input
+                                    placeholder="Имя"
+                                    type="text "
+                                    name="name"
+                                    required
+                                    class="message__form_inp messages"
+                                />
+                                <p class="message__form_inp-after"></p>
+                            </div>
+                            <div>
+                                <input
+                                    placeholder="Email"
+                                    type="email"
+                                    name="Email"
+                                    required
+                                    class="message__form_inp messages"
+                                />
+                                <p class="message__form_inp-after"></p>
+                            </div>
+                            <div>
+                                <textarea
+                                    required
+                                    placeholder="Ваше сообщение"
+                                    name="textarea"
+                                    class="message__form_inp messages"
+                                ></textarea>
+                                <p class="message__form_inp-after"></p>
+                            </div>
                             <button type="submit" class="message__form_btn">Отправить</button>
                         </form>
                     </div>
@@ -467,24 +493,30 @@
                     <div class="modal__close">&times;</div>
                     <h1 class="modal__title title">Заказать звонок</h1>
                     <p class="modal__descr">Оставьте заявку и мы свяжемся с Вами в ближайшее время!</p>
-                    <form action="#" class="modal__form" id="collback">
+                    <form novalidate action="#" class="modal__form" id="collback">
                         <div class="modal__inputs">
-                            <input
-                                type="text"
-                                placeholder="Имя"
-                                required
-                                name="name"
-                                autocomplete="additional-name"
-                                class="message__form_inp"
-                            />
-                            <input
-                                type="text"
-                                placeholder="Телефон"
-                                required
-                                name="tel"
-                                autocomplete="tel"
-                                class="message__form_inp"
-                            />
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="Имя"
+                                    required
+                                    name="name"
+                                    autocomplete="additional-name"
+                                    class="message__form_inp modal_input"
+                                />
+                                <p class="message__form_inp-after"></p>
+                            </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    placeholder="Телефон"
+                                    required
+                                    name="tel"
+                                    autocomplete="tel"
+                                    class="message__form_inp modal_input"
+                                />
+                                <p class="message__form_inp-after "></p>
+                            </div>
                         </div>
                         <button type="submit" class="modal__btn message__form_btn">Отправить</button>
                     </form>

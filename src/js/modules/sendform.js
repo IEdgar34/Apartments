@@ -3,18 +3,33 @@ const sendForm = () => {
     const messageBtn = document.querySelector(".message__form_btn");
     const modalForm = document.querySelector(".modal__form");
     const modalBtn = document.querySelector(".modal__btn ");
-
+    const inputs = document.querySelectorAll(".message__form_inp");
+    //
+    const messagesInput = document.querySelectorAll(".messagesInput");
     messageForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        messageBtn.textContent = "Отправка...";
-        send(messageForm, "message", messageBtn);
+        let arr = [];
+        messagesInput.forEach((item) => {
+            arr.push(validateRules[item.getAttribute("name")](item.value, item, "submit"));
+        });
+        arr.includes(false)
+            ? null
+            : ((messageBtn.textContent = "Отправка..."), send(messageForm, "message", messageBtn));
     });
+    //
+    const modalInputs = document.querySelectorAll(".modal_input");
     modalForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        modalBtn.textContent = "Отправка...";
-        send(modalForm, "collback", modalBtn);
-    });
 
+        let arr = [];
+        modalInputs.forEach((item) => {
+            //во время отправки формы получаем в массив резулятаты проверок всех полей ввода
+            arr.push(validateRules[item.getAttribute("name")](item.value, item, "submit"));
+        });
+        //отправляем форму в случае прохождения проверок 
+        arr.includes(false) ? null : ((modalBtn.textContent = "Отправка..."), send(modalForm, "collback", modalBtn));
+    });
+    //
     async function send(data, id, btn) {
         const apiKey = "7023015420:AAErko_HZmS7aSKXyBw-mcmcSTfjGQhXEDY";
         const cathId = "-4536366649";
@@ -56,6 +71,7 @@ const sendForm = () => {
                 notification("succes");
                 resetInputs();
                 btn.textContent = "Отправить";
+                inputs.forEach((item) => item.classList.remove("message__form_inp_valid"));
             }
         } catch (error) {
             if (error instanceof TypeError) {
@@ -87,6 +103,69 @@ const sendForm = () => {
     function resetInputs() {
         const inputsArr = document.querySelectorAll(".message__form_inp");
         inputsArr.forEach((item) => (item.value = ""));
+    }
+
+    //inputs validate
+
+    const validateRules = {
+        name: (value, target, type) => {
+            if (/^[а-яё А-ЯЁ a-z A-Z 0-9._-]{1,30}$/g.test(value)) {
+                valid(target);
+                return true;
+            } else {
+                invalid(target);
+                return false;
+            }
+            //
+        },
+        Email: (value, target, type) => {
+            if (/^[a-z A-Z 0-9._-]+@[a-z A-Z 0-9]+\.[a-z A-Z]{2,}$/g.test(value)) {
+                valid(target);
+                return true;
+            } else {
+                invalid(target);
+                return false;
+            }
+        },
+        textarea: (value, target, type) => {
+            if (value === "") {
+                invalid(target);
+                return false;
+            } else {
+                valid(target);
+                return true;
+            }
+        },
+        tel: (value, target, type) => {
+            if (/^[0-9]{11,11}$/g.test(value)) {
+                valid(target);
+                return true;
+            } else {
+                invalid(target);
+                return false;
+            }
+        },
+    };
+    inputs.forEach((item) => {
+        item.addEventListener("input", (e) => {
+            let value = e.target.value;
+            let target = e.target;
+            if (value === "") {
+                target.classList.remove("message__form_inp_valid");
+                target.classList.remove("message__form_inp_invalid");
+            } else {
+                validateRules[target.getAttribute("name")](value, target, "input");
+            }
+        });
+    });
+
+    function valid(target) {
+        target.classList.add("message__form_inp_valid");
+        target.classList.remove("message__form_inp_invalid");
+    }
+    function invalid(target) {
+        target.classList.remove("message__form_inp_valid");
+        target.classList.add("message__form_inp_invalid");
     }
 };
 export { sendForm };

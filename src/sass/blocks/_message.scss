@@ -71,7 +71,7 @@
             position: static;
             margin: 0 auto;
             padding: 30px 100px;
-            box-shadow: 1px 0px 15px 6px rgba(7,7,7,0.2) ;
+            box-shadow: 1px 0px 15px 6px rgba(7, 7, 7, 0.2);
         }
         @media (max-width: 590px) {
             padding: 30px 40px;
@@ -79,15 +79,69 @@
         @media (max-width: 370px) {
             padding: 30px 5px;
         }
+        div {
+            position: relative;
+        }
         &_inp {
+            width: 100%;
             padding: 10px 20px;
             border: 1px solid rgba(17, 17, 17, 0.5);
             border-radius: 10px;
             outline: none;
             font-size: 16px;
+            position: relative;
+            z-index: 100;
+            &_invalid {
+                border: 2px solid red;
+                & + p {
+                    &:after {
+                        content: "❌";
+                        display: block;
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        right: -25px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        z-index: 1000;
+                    }
+                    &::before {
+                        content: "Вы пропустили это поле,или ввели некоректные данные";
+                        position: absolute;
+                        width: 100%;
+                        height: 20px;
+                        border-color: red;
+                        font-size: 12px;
+                        bottom: -20px;
+                    }
+                }
+            }
+            &_valid {
+                border: 2px solid rgb(86, 228, 73);
+                & + p {
+                    &:after {
+                        content: "✅";
+                        display: block;
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        right: -25px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        z-index: 1000; /*  */
+                    }
+                }
+            }
+            &-after {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                z-index: 1;
+            }
         }
         textarea {
-            height: 200px;
+            height: 114px;
             resize: none;
             font-size: 16px;
         }
