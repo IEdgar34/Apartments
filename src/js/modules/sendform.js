@@ -5,7 +5,7 @@ const sendForm = () => {
     const modalBtn = document.querySelector(".modal__btn ");
     const inputs = document.querySelectorAll(".message__form_inp");
     //
-    const messagesInput = document.querySelectorAll(".messagesInput");
+    const messagesInput = document.querySelectorAll(".messages");
     messageForm.addEventListener("submit", (e) => {
         e.preventDefault();
         let arr = [];
@@ -26,7 +26,7 @@ const sendForm = () => {
             //во время отправки формы получаем в массив резулятаты проверок всех полей ввода
             arr.push(validateRules[item.getAttribute("name")](item.value, item, "submit"));
         });
-        //отправляем форму в случае прохождения проверок 
+        //отправляем форму в случае прохождения проверок
         arr.includes(false) ? null : ((modalBtn.textContent = "Отправка..."), send(modalForm, "collback", modalBtn));
     });
     //
