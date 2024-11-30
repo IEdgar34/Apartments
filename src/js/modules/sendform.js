@@ -10,7 +10,7 @@ const sendForm = () => {
         e.preventDefault();
         let arr = [];
         messagesInput.forEach((item) => {
-            arr.push(validateRules[item.getAttribute("name")](item.value, item, "submit"));
+            arr.push(validateRules[item.getAttribute("name")](item.value, item));
         });
         arr.includes(false)
             ? null
@@ -24,7 +24,7 @@ const sendForm = () => {
         let arr = [];
         modalInputs.forEach((item) => {
             //во время отправки формы получаем в массив резулятаты проверок всех полей ввода
-            arr.push(validateRules[item.getAttribute("name")](item.value, item, "submit"));
+            arr.push(validateRules[item.getAttribute("name")](item.value, item));
         });
         //отправляем форму в случае прохождения проверок
         arr.includes(false) ? null : ((modalBtn.textContent = "Отправка..."), send(modalForm, "collback", modalBtn));
@@ -108,7 +108,7 @@ const sendForm = () => {
     //inputs validate
 
     const validateRules = {
-        name: (value, target, type) => {
+        name: (value, target) => {
             if (/^[а-яё А-ЯЁ a-z A-Z 0-9._-]{1,30}$/g.test(value)) {
                 valid(target);
                 return true;
@@ -118,7 +118,7 @@ const sendForm = () => {
             }
             //
         },
-        Email: (value, target, type) => {
+        Email: (value, target) => {
             if (/^[a-z A-Z 0-9._-]+@[a-z A-Z 0-9]+\.[a-z A-Z]{2,}$/g.test(value)) {
                 valid(target);
                 return true;
@@ -127,7 +127,7 @@ const sendForm = () => {
                 return false;
             }
         },
-        textarea: (value, target, type) => {
+        textarea: (value, target) => {
             if (value === "") {
                 invalid(target);
                 return false;
@@ -136,8 +136,8 @@ const sendForm = () => {
                 return true;
             }
         },
-        tel: (value, target, type) => {
-            if (/^[0-9]{11,11}$/g.test(value)) {
+        tel: (value, target) => {
+            if (/^\+\d{1,1}\(\d{3,3}\)\-\d{3,3}\-\d{3,3}\-(?:\d{2,2}|\d{2,}\_)$/g.test(value)) {
                 valid(target);
                 return true;
             } else {
@@ -154,7 +154,7 @@ const sendForm = () => {
                 target.classList.remove("message__form_inp_valid");
                 target.classList.remove("message__form_inp_invalid");
             } else {
-                validateRules[target.getAttribute("name")](value, target, "input");
+                validateRules[target.getAttribute("name")](value, target);
             }
         });
     });
@@ -167,5 +167,70 @@ const sendForm = () => {
         target.classList.remove("message__form_inp_valid");
         target.classList.add("message__form_inp_invalid");
     }
+
+    function Inputmask(inputSelector, maskStr) {
+        this.input = document.querySelector(inputSelector);
+        this.mask = maskStr;
+        this.selectionCount = this.mask.indexOf("_");
+        this.start = this.mask.indexOf("_");
+        this.end = this.mask.lastIndexOf("_");
+        this.valid;
+        //функция для перемещения курсора в поле ввода
+        this.selection = (event) => {
+            event.target.selectionStart = this.selectionCount;
+            event.target.selectionEnd = this.selectionCount;
+        };
+        //добавление маски и перемещение курсора во время фокуса
+        this.addMask = (event) => {
+            this.selection(event);
+            if (event.target.value === "") {
+                this.input.value = this.mask;
+                this.selection(event);
+            }
+        };
+        //получаем индекс курсора в глобальную переменную во время изменения положения кусора по клику
+        this.cursor = () => {
+            this.selectionCount = this.input.selectionStart - 1;
+        };
+        this.inputMethod = (event) => {
+            event.preventDefault();
+            if (/[0-9]/.test(parseInt(event.data))) {
+                //при вводе чисел и прохождения условия
+                if (this.selectionCount <= this.end && !this.valid) {
+                    //получаем положение курсора до изменения строки
+                    this.selectionCount = this.input.value.indexOf("_") + 1;
+                    //изменяем строку
+                    this.input.value = this.input.value.replace("_", event.data);
+                    //двигаем курсор
+                    this.selection(event);
+                }
+            } else if (event.data != null) {
+                // удаляем все кроме чисел
+                this.input.value = this.input.value.replace(/[a-z A-Z]/g, "");
+            }
+            if (event.data === null) {
+                //при нажатии back space
+                if (this.selectionCount >= this.start) {
+                    //получаем индекс курсора в глобальную переменную во время удаления из строки
+                    this.cursor();
+                    //редактируем строку
+                    this.input.value =
+                        this.input.value.slice(0, this.input.selectionStart - 1) +
+                        this.mask[this.input.selectionStart - 1] +
+                        this.input.value.slice(this.input.selectionStart);
+                    //
+                    //сдвигаем курсор
+                    this.selection(event);
+                    this.selectionCount -= 1;
+                }
+            }
+            this.valid = validateRules[event.target.getAttribute("name")](event.target.value, event.target);
+        };
+        this.input.addEventListener("focus", this.addMask, event);
+        this.input.addEventListener("click", this.cursor, event);
+        this.input.addEventListener("beforeinput", this.inputMethod, event);
+    }
+
+    new Inputmask("input[name='tel']", "+7(___)-___-___-__");
 };
 export { sendForm };
