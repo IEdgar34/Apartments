@@ -231,6 +231,6 @@ const sendForm = () => {
         this.input.addEventListener("beforeinput", this.inputMethod, event);
     }
 
-    new Inputmask("input[name='tel']", "+7(___)-___-___-__");
+    new Inputmask("input[name='tel']", "+7(___)-___-__-__");
 };
 export { sendForm };
