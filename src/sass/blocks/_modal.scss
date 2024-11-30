@@ -64,10 +64,11 @@
     }
 
     &__inputs {
-        width: 100%;
+        width: 90%;
         display: flex;
         flex-direction: column;
         gap: 35px;
+        margin: 0 auto;
         margin-bottom: 30px;
         input {
             @media (max-width: 960px) {
