@@ -137,7 +137,7 @@ const sendForm = () => {
             }
         },
         tel: (value, target) => {
-            if (/^\+\d{1,1}\(\d{3,3}\)\-\d{3,3}\-\d{3,3}\-(?:\d{2,2}|\d{2,}\_)$/g.test(value)) {
+            if (/^\+\d{1,1}\(\d{3,3}\)\-\d{3,3}\-\d{2,2}\-(?:\d{2,2}|\d{2,}\_)$/g.test(value)) {
                 valid(target);
                 return true;
             } else {
